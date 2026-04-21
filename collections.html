@@ -1,0 +1,459 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Koleksi — Dusk &amp; Dawn</title>
+  <meta name="description" content="Jelajahi koleksi Dusk & Dawn — enam chapter tentang perjalanan manusia, dari Dawn hingga New Dawn. Filter berdasarkan chapter dan temukan narasi yang paling resonan denganmu.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/collections.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Langsung ke konten</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dusk & Dawn - Beranda">
+        <span class="navbar__logo-mark">D&amp;D</span>
+        <span class="navbar__logo-wordmark">DUSK &amp; DAWN</span>
+      </a>
+      <ul class="navbar__links" role="list">
+        <li><a href="collections.html" class="navbar__link">Koleksi</a></li>
+        <li><a href="journal.html" class="navbar__link">Jurnal</a></li>
+        <li><a href="about.html" class="navbar__link">Tentang</a></li>
+        <li><a href="contact.html" class="navbar__link">Kontak</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <a href="cart.html" class="navbar__cart" aria-label="Keranjang belanja">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" aria-live="polite"></span>
+        </a>
+        <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <a href="index.html" class="mobile-nav__link">Beranda</a>
+    <a href="collections.html" class="mobile-nav__link">Koleksi</a>
+    <a href="journal.html" class="mobile-nav__link">Jurnal</a>
+    <a href="about.html" class="mobile-nav__link">Tentang</a>
+    <a href="contact.html" class="mobile-nav__link">Kontak</a>
+    <a href="cart.html" class="mobile-nav__link">Keranjang</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- PAGE HEADER -->
+    <div class="collections-hero">
+      <p class="collections-hero__subtitle text-accent" data-reveal>"Setiap chapter adalah pilihan tentang siapa kamu hari ini."</p>
+      <h1 class="collections-hero__title" data-reveal data-delay="100">Koleksi</h1>
+    </div>
+
+    <!-- FILTER BAR -->
+    <div class="filter-bar" role="navigation" aria-label="Filter chapter">
+      <div class="filter-bar__inner" role="list">
+        <button class="filter-pill active" data-chapter="all" role="listitem" aria-pressed="true">Semua</button>
+        <button class="filter-pill" data-chapter="dawn" role="listitem" aria-pressed="false">Dawn</button>
+        <button class="filter-pill" data-chapter="chasing" role="listitem" aria-pressed="false">Chasing</button>
+        <button class="filter-pill" data-chapter="gray" role="listitem" aria-pressed="false">Gray Area</button>
+        <button class="filter-pill" data-chapter="void" role="listitem" aria-pressed="false">Midnight</button>
+        <button class="filter-pill" data-chapter="golden" role="listitem" aria-pressed="false">Golden Hour</button>
+        <button class="filter-pill" data-chapter="newdawn" role="listitem" aria-pressed="false">New Dawn</button>
+      </div>
+    </div>
+
+    <!-- PRODUCTS SECTION -->
+    <section class="products-section" aria-label="Daftar produk">
+      <div class="container">
+
+        <!-- Chapter banner (hidden by default, shown when chapter filtered) -->
+        <div class="chapter-banner" aria-live="polite">
+          <div class="chapter-banner__number">01</div>
+          <h2 class="chapter-banner__name">Dawn</h2>
+          <p class="chapter-banner__desc">Deskripsi chapter akan muncul di sini.</p>
+        </div>
+
+        <!-- Product Grid -->
+        <div class="products-grid" role="list" aria-label="Produk koleksi">
+
+          <!-- DAWN 1 -->
+          <div class="product-item" data-chapter="dawn" role="listitem" data-reveal>
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#0f0a05,#1a1008);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <ellipse cx="100" cy="190" rx="88" ry="75" fill="rgba(245,215,181,0.07)"/>
+                  <ellipse cx="100" cy="155" rx="62" ry="80" fill="rgba(245,215,181,0.09)"/>
+                  <ellipse cx="100" cy="110" rx="38" ry="55" fill="rgba(245,215,181,0.13)"/>
+                  <circle cx="100" cy="72" r="22" fill="rgba(245,215,181,0.2)"/>
+                  <circle cx="100" cy="54" r="10" fill="rgba(245,215,181,0.32)"/>
+                  <path d="M55 135 Q100 85 145 135" stroke="rgba(245,215,181,0.25)" stroke-width="1.5" fill="none"/>
+                  <path d="M38 170 Q100 105 162 170" stroke="rgba(201,168,76,0.15)" stroke-width="1" fill="none"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--dawn">Dawn</span>
+                <h3 class="card__title">Fajar Pertama Tee</h3>
+                <p class="card__price">Rp 285.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"dawn-tee-001","name":"Fajar Pertama Tee","chapter":"dawn","price":285000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- DAWN 2 -->
+          <div class="product-item" data-chapter="dawn" role="listitem" data-reveal data-delay="100">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#0f0a05,#1e1410);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="100" cy="130" r="85" fill="none" stroke="rgba(245,215,181,0.07)" stroke-width="2"/>
+                  <circle cx="100" cy="130" r="60" fill="rgba(245,215,181,0.05)"/>
+                  <path d="M50 130 Q100 60 150 130 Q130 190 100 200 Q70 190 50 130Z" fill="rgba(245,215,181,0.09)"/>
+                  <circle cx="100" cy="95" r="18" fill="rgba(245,215,181,0.18)"/>
+                  <path d="M60 100 Q100 70 140 100" stroke="rgba(245,215,181,0.3)" stroke-width="1" fill="none"/>
+                  <circle cx="80" cy="160" r="5" fill="rgba(201,168,76,0.2)"/>
+                  <circle cx="120" cy="165" r="3" fill="rgba(201,168,76,0.15)"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--dawn">Dawn</span>
+                <h3 class="card__title">Bloom Hoodie</h3>
+                <p class="card__price">Rp 425.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"bloom-hoodie-001","name":"Bloom Hoodie","chapter":"dawn","price":425000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- CHASING 1 -->
+          <div class="product-item" data-chapter="chasing" role="listitem" data-reveal data-delay="200">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#060810,#080c1e);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <line x1="20" y1="210" x2="180" y2="50" stroke="rgba(58,95,200,0.45)" stroke-width="2.5"/>
+                  <line x1="20" y1="240" x2="180" y2="80" stroke="rgba(58,95,200,0.25)" stroke-width="1.5"/>
+                  <line x1="20" y1="180" x2="180" y2="20" stroke="rgba(58,95,200,0.2)" stroke-width="1"/>
+                  <polygon points="100,30 165,140 35,140" fill="rgba(58,95,200,0.1)" stroke="rgba(58,95,200,0.3)" stroke-width="1"/>
+                  <circle cx="165" cy="55" r="18" fill="none" stroke="rgba(58,95,200,0.35)" stroke-width="1.5"/>
+                  <circle cx="165" cy="55" r="7" fill="rgba(58,95,200,0.3)"/>
+                  <path d="M20 140 Q80 90 140 120" stroke="rgba(255,255,255,0.1)" stroke-width="1" fill="none"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--chasing">Chasing</span>
+                <h3 class="card__title">Kinetic Tee</h3>
+                <p class="card__price">Rp 285.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"kinetic-tee-001","name":"Kinetic Tee","chapter":"chasing","price":285000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- CHASING 2 -->
+          <div class="product-item" data-chapter="chasing" role="listitem" data-reveal>
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#04060f,#060a18);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M30 200 L100 30 L170 200 Z" fill="none" stroke="rgba(58,95,200,0.3)" stroke-width="1.5"/>
+                  <path d="M50 200 L100 60 L150 200 Z" fill="rgba(58,95,200,0.08)"/>
+                  <line x1="100" y1="30" x2="170" y2="130" stroke="rgba(58,95,200,0.4)" stroke-width="2"/>
+                  <line x1="100" y1="30" x2="30" y2="150" stroke="rgba(58,95,200,0.25)" stroke-width="1.5"/>
+                  <circle cx="100" cy="30" r="8" fill="rgba(255,255,255,0.3)"/>
+                  <rect x="60" y="150" width="80" height="60" fill="rgba(58,95,200,0.06)" stroke="rgba(58,95,200,0.2)" stroke-width="1"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--chasing">Chasing</span>
+                <h3 class="card__title">Surge Jacket</h3>
+                <p class="card__price">Rp 550.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"surge-jacket-001","name":"Surge Jacket","chapter":"chasing","price":550000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- GRAY AREA 1 -->
+          <div class="product-item" data-chapter="gray" role="listitem" data-reveal data-delay="100">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#0c0c0c,#141414);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <rect x="30" y="40" width="140" height="180" fill="none" stroke="rgba(138,138,138,0.15)" stroke-width="1"/>
+                  <rect x="50" y="60" width="100" height="140" fill="rgba(138,138,138,0.05)"/>
+                  <rect x="65" y="80" width="70" height="100" fill="rgba(138,138,138,0.07)" stroke="rgba(138,138,138,0.2)" stroke-width="0.8"/>
+                  <circle cx="100" cy="130" r="25" fill="rgba(138,138,138,0.1)" stroke="rgba(138,138,138,0.25)" stroke-width="1"/>
+                  <line x1="30" y1="130" x2="170" y2="130" stroke="rgba(138,138,138,0.15)" stroke-width="0.8"/>
+                  <line x1="100" y1="40" x2="100" y2="220" stroke="rgba(138,138,138,0.12)" stroke-width="0.8"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--gray">Gray Area</span>
+                <h3 class="card__title">Fog Longsleeve</h3>
+                <p class="card__price">Rp 320.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"fog-ls-001","name":"Fog Longsleeve","chapter":"gray","price":320000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- GRAY AREA 2 -->
+          <div class="product-item" data-chapter="gray" role="listitem" data-reveal data-delay="200">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#0e0e0e,#161616);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <ellipse cx="100" cy="130" rx="80" ry="100" fill="rgba(138,138,138,0.06)"/>
+                  <ellipse cx="100" cy="130" rx="55" ry="70" fill="rgba(138,138,138,0.06)" transform="rotate(20,100,130)"/>
+                  <ellipse cx="100" cy="130" rx="35" ry="45" fill="rgba(138,138,138,0.08)" transform="rotate(-15,100,130)"/>
+                  <path d="M40 80 Q100 50 160 80 Q180 130 160 180 Q100 210 40 180 Q20 130 40 80Z" fill="none" stroke="rgba(138,138,138,0.2)" stroke-width="1"/>
+                  <circle cx="100" cy="130" r="12" fill="rgba(138,138,138,0.25)"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--gray">Gray Area</span>
+                <h3 class="card__title">Liminal Hoodie</h3>
+                <p class="card__price">Rp 425.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"liminal-hoodie-001","name":"Liminal Hoodie","chapter":"gray","price":425000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- MIDNIGHT 1 -->
+          <div class="product-item" data-chapter="void" role="listitem" data-reveal>
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#020204,#06040e);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="100" cy="130" r="90" fill="rgba(26,16,48,0.6)"/>
+                  <circle cx="100" cy="130" r="60" fill="none" stroke="rgba(61,43,110,0.4)" stroke-width="1"/>
+                  <circle cx="100" cy="130" r="32" fill="rgba(61,43,110,0.12)"/>
+                  <circle cx="100" cy="130" r="12" fill="rgba(61,43,110,0.35)"/>
+                  <circle cx="40" cy="75" r="2.5" fill="rgba(255,255,255,0.2)"/>
+                  <circle cx="162" cy="62" r="1.8" fill="rgba(255,255,255,0.15)"/>
+                  <circle cx="175" cy="185" r="1.2" fill="rgba(255,255,255,0.1)"/>
+                  <circle cx="28" cy="195" r="2" fill="rgba(255,255,255,0.12)"/>
+                  <circle cx="135" cy="40" r="1.5" fill="rgba(255,255,255,0.18)"/>
+                  <path d="M100 40 L100 220" stroke="rgba(61,43,110,0.2)" stroke-width="0.8" stroke-dasharray="4 6"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--void">Midnight</span>
+                <h3 class="card__title">Void Tee</h3>
+                <p class="card__price">Rp 285.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"void-tee-001","name":"Void Tee","chapter":"void","price":285000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- MIDNIGHT 2 -->
+          <div class="product-item" data-chapter="void" role="listitem" data-reveal data-delay="100">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#030206,#080614);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <polygon points="100,20 185,240 15,240" fill="rgba(61,43,110,0.12)" stroke="rgba(61,43,110,0.35)" stroke-width="1.5"/>
+                  <polygon points="100,50 165,220 35,220" fill="rgba(61,43,110,0.08)"/>
+                  <line x1="100" y1="20" x2="100" y2="240" stroke="rgba(61,43,110,0.2)" stroke-width="0.8" stroke-dasharray="3 5"/>
+                  <circle cx="100" cy="20" r="5" fill="rgba(255,255,255,0.25)"/>
+                  <circle cx="60" cy="180" r="3" fill="rgba(61,43,110,0.5)"/>
+                  <circle cx="140" cy="185" r="3" fill="rgba(61,43,110,0.5)"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--void">Midnight</span>
+                <h3 class="card__title">Abyss Hoodie</h3>
+                <p class="card__price">Rp 425.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"abyss-hoodie-001","name":"Abyss Hoodie","chapter":"void","price":425000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- GOLDEN HOUR 1 -->
+          <div class="product-item" data-chapter="golden" role="listitem" data-reveal data-delay="200">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#100804,#1e1008);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <circle cx="100" cy="130" r="40" fill="rgba(212,131,42,0.2)"/>
+                  <path d="M100 20 L100 90" stroke="rgba(212,131,42,0.35)" stroke-width="2.5"/>
+                  <path d="M100 170 L100 240" stroke="rgba(212,131,42,0.2)" stroke-width="1.5"/>
+                  <path d="M20 130 L80 130" stroke="rgba(212,131,42,0.3)" stroke-width="1.5"/>
+                  <path d="M120 130 L180 130" stroke="rgba(212,131,42,0.25)" stroke-width="1.5"/>
+                  <path d="M40 50 L80 95" stroke="rgba(212,131,42,0.25)" stroke-width="1.5"/>
+                  <path d="M160 50 L120 95" stroke="rgba(212,131,42,0.2)" stroke-width="1.5"/>
+                  <path d="M40 210 L80 165" stroke="rgba(212,131,42,0.15)" stroke-width="1"/>
+                  <path d="M160 210 L120 165" stroke="rgba(212,131,42,0.12)" stroke-width="1"/>
+                  <circle cx="100" cy="130" r="15" fill="rgba(212,131,42,0.4)"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--golden">Golden Hour</span>
+                <h3 class="card__title">Amber Tee</h3>
+                <p class="card__price">Rp 285.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"amber-tee-001","name":"Amber Tee","chapter":"golden","price":285000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- GOLDEN HOUR 2 -->
+          <div class="product-item" data-chapter="golden" role="listitem" data-reveal>
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#130c06,#201408);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M0 180 Q100 80 200 160" stroke="rgba(212,131,42,0.3)" stroke-width="2" fill="none"/>
+                  <path d="M0 200 Q100 100 200 180" stroke="rgba(212,131,42,0.2)" stroke-width="1.5" fill="none"/>
+                  <path d="M0 160 Q100 60 200 140" stroke="rgba(212,131,42,0.15)" stroke-width="1" fill="none"/>
+                  <ellipse cx="100" cy="130" rx="70" ry="30" fill="rgba(212,131,42,0.08)" transform="rotate(-5,100,130)"/>
+                  <circle cx="100" cy="80" r="35" fill="rgba(212,131,42,0.12)"/>
+                  <circle cx="100" cy="80" r="18" fill="rgba(212,131,42,0.2)"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--golden">Golden Hour</span>
+                <h3 class="card__title">Solstice Jacket</h3>
+                <p class="card__price">Rp 550.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"solstice-jacket-001","name":"Solstice Jacket","chapter":"golden","price":550000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- NEW DAWN 1 -->
+          <div class="product-item" data-chapter="newdawn" role="listitem" data-reveal data-delay="100">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#05100a,#081a10);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 180 Q60 80 100 130 Q140 180 180 80" stroke="rgba(201,232,212,0.4)" stroke-width="2" fill="none"/>
+                  <path d="M20 200 Q70 100 110 150 Q150 200 180 100" stroke="rgba(201,232,212,0.2)" stroke-width="1.5" fill="none"/>
+                  <circle cx="100" cy="130" r="45" fill="rgba(201,232,212,0.07)"/>
+                  <circle cx="155" cy="60" r="22" fill="rgba(201,232,212,0.12)"/>
+                  <circle cx="155" cy="60" r="10" fill="rgba(201,232,212,0.22)"/>
+                  <path d="M30 100 Q100 50 170 100" stroke="rgba(201,232,212,0.2)" stroke-width="1" fill="none"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--newdawn">New Dawn</span>
+                <h3 class="card__title">Rebirth Tee</h3>
+                <p class="card__price">Rp 285.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"rebirth-tee-001","name":"Rebirth Tee","chapter":"newdawn","price":285000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- NEW DAWN 2 -->
+          <div class="product-item" data-chapter="newdawn" role="listitem" data-reveal data-delay="200">
+            <article class="card">
+              <div class="card__image" style="background:linear-gradient(150deg,#060e0a,#0a1810);">
+                <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                  <path d="M20 220 Q60 100 100 150 Q140 200 180 60" fill="none" stroke="rgba(201,232,212,0.3)" stroke-width="2"/>
+                  <ellipse cx="100" cy="140" rx="75" ry="55" fill="rgba(201,232,212,0.05)" transform="rotate(-10,100,140)"/>
+                  <ellipse cx="100" cy="140" rx="50" ry="35" fill="rgba(201,232,212,0.07)" transform="rotate(10,100,140)"/>
+                  <circle cx="100" cy="140" r="20" fill="rgba(201,232,212,0.12)"/>
+                  <circle cx="100" cy="140" r="8" fill="rgba(201,232,212,0.28)"/>
+                  <path d="M40 80 L160 80" stroke="rgba(201,232,212,0.1)" stroke-width="0.8"/>
+                </svg>
+              </div>
+              <div class="card__body">
+                <span class="badge badge--newdawn">New Dawn</span>
+                <h3 class="card__title">Horizon Hoodie</h3>
+                <p class="card__price">Rp 425.000</p>
+                <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"horizon-hoodie-001","name":"Horizon Hoodie","chapter":"newdawn","price":425000,"size":"M"}'>
+                  Tambah ke Keranjang
+                </button>
+              </div>
+            </article>
+          </div>
+
+          <!-- EMPTY STATE -->
+          <div class="products-empty" aria-live="polite">
+            <div class="products-empty__icon" aria-hidden="true">∅</div>
+            <p class="products-empty__text">Tidak ada produk dalam chapter ini saat ini.</p>
+          </div>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">D&amp;D · DUSK &amp; DAWN</div>
+          <p class="footer__brand-tagline text-accent">"Antara fajar dan senja, ada kamu."</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Navigasi</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html" class="footer__link">Koleksi</a></li>
+            <li><a href="journal.html" class="footer__link">Jurnal</a></li>
+            <li><a href="about.html" class="footer__link">Tentang</a></li>
+            <li><a href="contact.html" class="footer__link">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__heading">Chapter</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html#dawn" class="footer__link">Dawn</a></li>
+            <li><a href="collections.html#chasing" class="footer__link">Chasing</a></li>
+            <li><a href="collections.html#gray" class="footer__link">Gray Area</a></li>
+            <li><a href="collections.html#void" class="footer__link">Midnight</a></li>
+            <li><a href="collections.html#golden" class="footer__link">Golden Hour</a></li>
+            <li><a href="collections.html#newdawn" class="footer__link">New Dawn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__heading">Newsletter</h3>
+          <p class="footer__newsletter-text">Jadilah yang pertama tahu saat chapter baru dimulai.</p>
+          <form class="footer__newsletter-form" name="newsletter" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="newsletter">
+            <input type="email" name="email" class="footer__newsletter-input" placeholder="emailmu@..." required aria-label="Email newsletter">
+            <button type="submit" class="footer__newsletter-btn">Daftar</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Dusk &amp; Dawn. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://tiktok.com/@duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.77.11 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.77a4.85 4.85 0 01-1.03-.08z"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/collections.js"></script>
+
+</body>
+</html>

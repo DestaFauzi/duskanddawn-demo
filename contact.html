@@ -1,0 +1,287 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hubungi Kami — Dusk &amp; Dawn</title>
+  <meta name="description" content="Ada cerita yang ingin kamu bagikan? Kirim pesan kepada Dusk & Dawn. Kami mendengar setiap kata.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/contact.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Langsung ke konten</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dusk & Dawn - Beranda">
+        <span class="navbar__logo-mark">D&amp;D</span>
+        <span class="navbar__logo-wordmark">DUSK &amp; DAWN</span>
+      </a>
+      <ul class="navbar__links" role="list">
+        <li><a href="collections.html" class="navbar__link">Koleksi</a></li>
+        <li><a href="journal.html" class="navbar__link">Jurnal</a></li>
+        <li><a href="about.html" class="navbar__link">Tentang</a></li>
+        <li><a href="contact.html" class="navbar__link">Kontak</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <a href="cart.html" class="navbar__cart" aria-label="Keranjang belanja">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" aria-live="polite"></span>
+        </a>
+        <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <a href="index.html" class="mobile-nav__link">Beranda</a>
+    <a href="collections.html" class="mobile-nav__link">Koleksi</a>
+    <a href="journal.html" class="mobile-nav__link">Jurnal</a>
+    <a href="about.html" class="mobile-nav__link">Tentang</a>
+    <a href="contact.html" class="mobile-nav__link">Kontak</a>
+    <a href="cart.html" class="mobile-nav__link">Keranjang</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- CONTACT HERO -->
+    <section class="contact-hero" aria-label="Header kontak">
+      <div class="hero-blob hero-blob--3" aria-hidden="true" style="opacity:0.05;top:10%;left:60%;"></div>
+      <p class="about-hero__label" data-reveal>Kontak</p>
+      <h1 class="contact-hero__title" data-reveal data-delay="100">
+        Ada cerita yang ingin kamu bagikan? Kami mendengar.
+      </h1>
+      <p class="contact-hero__subtitle text-accent" data-reveal data-delay="200">
+        "Tidak ada pesan yang terlalu kecil. Tidak ada cerita yang tidak penting."
+      </p>
+    </section>
+
+    <!-- CONTACT SECTION -->
+    <section class="contact-section" aria-label="Form dan informasi kontak">
+      <div class="container">
+        <div class="contact-layout">
+
+          <!-- Contact Form -->
+          <div class="contact-form-wrap" data-reveal>
+            <h2 class="contact-form-wrap__title">Kirim Pesan</h2>
+            <p class="contact-form-wrap__subtitle">
+              Apakah kamu punya pertanyaan tentang koleksi, ingin berkolaborasi, atau sekadar
+              ingin berbagi cerita tentang transisi yang sedang kamu jalani — tulis ke kami.
+            </p>
+
+            <form class="contact-form" id="contact-form" name="contact" method="POST" data-netlify="true" novalidate>
+              <input type="hidden" name="form-name" value="contact">
+
+              <div class="form-group">
+                <label for="nama" class="form-label">Nama</label>
+                <input
+                  type="text"
+                  id="nama"
+                  name="name"
+                  class="form-input"
+                  placeholder="Siapa namamu?"
+                  required
+                  autocomplete="name"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="email" class="form-label">Email</label>
+                <input
+                  type="email"
+                  id="email"
+                  name="email"
+                  class="form-input"
+                  placeholder="emailmu@..."
+                  required
+                  autocomplete="email"
+                >
+              </div>
+
+              <div class="form-group">
+                <label for="pesan" class="form-label">Pesan</label>
+                <textarea
+                  id="pesan"
+                  name="message"
+                  class="form-textarea"
+                  placeholder="Ceritamu..."
+                  required
+                  rows="6"
+                ></textarea>
+              </div>
+
+              <button type="submit" class="contact-form__submit" id="contact-submit">
+                Kirim Pesanmu
+              </button>
+            </form>
+
+            <!-- Success state -->
+            <div class="contact-form__success" id="contact-success" aria-live="polite">
+              <div class="contact-form__success-icon" aria-hidden="true">✦</div>
+              <h3 class="contact-form__success-title">Pesanmu sudah tersampaikan.</h3>
+              <p class="contact-form__success-text text-accent" style="font-style:italic;">
+                "Kami akan membaca setiap kata dengan seksama. Nantikan jawaban kami."
+              </p>
+            </div>
+          </div>
+
+          <!-- Contact Info + Manifesto -->
+          <div class="contact-info" data-reveal data-delay="200">
+
+            <!-- Contact details -->
+            <div class="contact-info__section">
+              <span class="contact-info__label">Hubungi Langsung</span>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"/>
+                    <polyline points="22,6 12,13 2,6"/>
+                  </svg>
+                </div>
+                <div class="contact-info__text">
+                  <span class="contact-info__title">Email</span>
+                  <a href="mailto:hello@duskanddawn.id" class="contact-info__value">hello@duskanddawn.id</a>
+                </div>
+              </div>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg viewBox="0 0 24 24" aria-hidden="true">
+                    <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+                    <circle cx="12" cy="12" r="5"/>
+                    <circle cx="17.5" cy="6.5" r="1.5" fill="currentColor" stroke="none"/>
+                  </svg>
+                </div>
+                <div class="contact-info__text">
+                  <span class="contact-info__title">Instagram</span>
+                  <a href="https://instagram.com/duskanddawn" target="_blank" rel="noopener noreferrer" class="contact-info__value">@duskanddawn</a>
+                </div>
+              </div>
+
+              <div class="contact-info__item">
+                <div class="contact-info__icon">
+                  <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+                    <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.77.11 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.77a4.85 4.85 0 01-1.03-.08z"/>
+                  </svg>
+                </div>
+                <div class="contact-info__text">
+                  <span class="contact-info__title">TikTok</span>
+                  <a href="https://tiktok.com/@duskanddawn" target="_blank" rel="noopener noreferrer" class="contact-info__value">@duskanddawn</a>
+                </div>
+              </div>
+            </div>
+
+            <!-- Brand manifesto panel -->
+            <div class="contact-manifesto">
+              <p class="contact-manifesto__quote">
+                "Setiap percakapan adalah transisi. Ketika kamu memilih untuk menghubungi kami,
+                kamu sudah memulai sebuah bab baru — dan kami ingin hadir di sana bersamamu."
+              </p>
+              <span class="contact-manifesto__attr">— Dusk &amp; Dawn</span>
+            </div>
+
+            <!-- Abstract SVG decoration -->
+            <div aria-hidden="true" style="opacity:0.4;">
+              <svg viewBox="0 0 300 180" xmlns="http://www.w3.org/2000/svg" style="width:100%;max-width:300px;">
+                <!-- New dawn light breaking through dark -->
+                <path d="M0 140 Q75 60 150 90 Q225 120 300 40" stroke="rgba(201,232,212,0.25)" stroke-width="2" fill="none"/>
+                <path d="M0 160 Q80 80 160 110 Q240 140 300 60" stroke="rgba(201,232,212,0.15)" stroke-width="1.5" fill="none"/>
+                <ellipse cx="220" cy="55" rx="40" ry="28" fill="rgba(201,168,76,0.07)" transform="rotate(-10,220,55)"/>
+                <circle cx="220" cy="55" r="14" fill="rgba(201,168,76,0.12)"/>
+                <circle cx="220" cy="55" r="6" fill="rgba(201,168,76,0.25)"/>
+              </svg>
+            </div>
+
+          </div>
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">D&amp;D · DUSK &amp; DAWN</div>
+          <p class="footer__brand-tagline text-accent">"Antara fajar dan senja, ada kamu."</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Navigasi</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html" class="footer__link">Koleksi</a></li>
+            <li><a href="journal.html" class="footer__link">Jurnal</a></li>
+            <li><a href="about.html" class="footer__link">Tentang</a></li>
+            <li><a href="contact.html" class="footer__link">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__heading">Chapter</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html#dawn" class="footer__link">Dawn</a></li>
+            <li><a href="collections.html#chasing" class="footer__link">Chasing</a></li>
+            <li><a href="collections.html#gray" class="footer__link">Gray Area</a></li>
+            <li><a href="collections.html#void" class="footer__link">Midnight</a></li>
+            <li><a href="collections.html#golden" class="footer__link">Golden Hour</a></li>
+            <li><a href="collections.html#newdawn" class="footer__link">New Dawn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__heading">Newsletter</h3>
+          <p class="footer__newsletter-text">Jadilah yang pertama tahu saat chapter baru dimulai.</p>
+          <form class="footer__newsletter-form" name="newsletter" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="newsletter">
+            <input type="email" name="email" class="footer__newsletter-input" placeholder="emailmu@..." required aria-label="Email newsletter">
+            <button type="submit" class="footer__newsletter-btn">Daftar</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Dusk &amp; Dawn. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://tiktok.com/@duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.77.11 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.77a4.85 4.85 0 01-1.03-.08z"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script>
+    // Contact form handling
+    (function() {
+      var form = document.getElementById('contact-form');
+      var success = document.getElementById('contact-success');
+      if (!form) return;
+
+      form.addEventListener('submit', function(e) {
+        // Let Netlify handle it, but show success state after brief delay
+        setTimeout(function() {
+          form.style.display = 'none';
+          if (success) success.classList.add('visible');
+        }, 100);
+      });
+    })();
+  </script>
+
+</body>
+</html>

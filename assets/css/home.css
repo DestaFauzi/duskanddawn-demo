@@ -1,0 +1,428 @@
+/* ============================================================
+   HOME.CSS — Home Page Specific Styles
+   ============================================================ */
+
+/* ==================== HERO ==================== */
+
+.hero {
+  position: relative;
+  width: 100%;
+  height: 100vh;
+  min-height: 600px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: var(--bg);
+}
+
+.hero__bg {
+  position: absolute;
+  inset: 0;
+  z-index: 0;
+  overflow: hidden;
+}
+
+.hero__bg-svg {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 2;
+  text-align: center;
+  padding: 0 var(--space-md);
+  max-width: 900px;
+}
+
+.hero__eyebrow {
+  font-size: 0.7rem;
+  letter-spacing: 0.35em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  animation: fadeIn 0.8s ease 0.3s forwards;
+}
+
+.hero__title {
+  font-family: var(--font-display);
+  font-size: clamp(3.5rem, 9vw, 8rem);
+  font-weight: 300;
+  letter-spacing: 0.18em;
+  line-height: 1;
+  color: var(--text);
+  margin-bottom: var(--space-md);
+  opacity: 0;
+  animation: fadeUp 1s var(--ease-out) 0.5s forwards;
+}
+
+.hero__tagline {
+  font-family: var(--font-accent);
+  font-style: italic;
+  font-size: clamp(1.1rem, 2vw, 1.6rem);
+  color: var(--dust);
+  opacity: 0;
+  animation: fadeUp 0.9s var(--ease-out) 0.9s forwards;
+}
+
+.hero__cta {
+  margin-top: var(--space-lg);
+  opacity: 0;
+  animation: fadeIn 0.8s ease 1.3s forwards;
+}
+
+/* ==================== PHILOSOPHY ==================== */
+
+.philosophy {
+  padding: var(--space-2xl) 0;
+  position: relative;
+}
+
+.philosophy__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-lg);
+  align-items: center;
+}
+
+@media (min-width: 1024px) {
+  .philosophy__grid {
+    grid-template-columns: 1fr 1fr;
+    gap: var(--space-xl);
+  }
+}
+
+.philosophy__visual {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 400px;
+  position: relative;
+}
+
+.philosophy__svg-wrap {
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1;
+}
+
+.philosophy__text-block {
+  padding: var(--space-md) 0;
+}
+
+.philosophy__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-md);
+}
+
+.philosophy__statement {
+  font-family: var(--font-display);
+  font-size: clamp(1.6rem, 3vw, 2.4rem);
+  line-height: 1.45;
+  font-weight: 300;
+  color: var(--text);
+  margin-bottom: var(--space-md);
+}
+
+.philosophy__statement em {
+  font-style: italic;
+  color: var(--dust);
+}
+
+.philosophy__sub {
+  font-size: 0.95rem;
+  color: var(--text-muted);
+  line-height: 1.8;
+  max-width: 45ch;
+}
+
+/* ==================== CHAPTERS SECTION ==================== */
+
+.chapters {
+  padding: var(--space-xl) 0;
+  overflow: hidden;
+}
+
+.chapters__header {
+  padding: 0 var(--space-md);
+  margin-bottom: var(--space-lg);
+  text-align: center;
+}
+
+.chapters__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+  margin-bottom: var(--space-sm);
+}
+
+.chapters__subtitle {
+  font-family: var(--font-accent);
+  font-style: italic;
+  color: var(--text-muted);
+  font-size: 1rem;
+}
+
+.chapters__track {
+  display: flex;
+  gap: var(--space-md);
+  padding: var(--space-sm) var(--space-md) var(--space-lg);
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  -webkit-overflow-scrolling: touch;
+  cursor: grab;
+  user-select: none;
+}
+
+.chapters__track:active {
+  cursor: grabbing;
+}
+
+.chapters__track::-webkit-scrollbar {
+  height: 3px;
+}
+
+.chapters__track::-webkit-scrollbar-track {
+  background: var(--surface-2);
+}
+
+.chapters__track::-webkit-scrollbar-thumb {
+  background: var(--gold);
+  border-radius: 2px;
+}
+
+/* Chapter Card */
+.chapter-card {
+  flex: 0 0 280px;
+  scroll-snap-align: start;
+  background: var(--surface);
+  border: 1px solid rgba(240, 235, 224, 0.05);
+  border-radius: var(--radius-lg);
+  padding: var(--space-md);
+  position: relative;
+  overflow: hidden;
+  transition: all 0.4s var(--ease-out);
+  cursor: default;
+}
+
+.chapter-card::before {
+  content: '';
+  position: absolute;
+  inset: 0;
+  border-radius: var(--radius-lg);
+  border: 1px solid transparent;
+  transition: border-color 0.4s ease;
+  pointer-events: none;
+  z-index: 2;
+}
+
+.chapter-card:hover::before {
+  border-color: var(--chapter-accent, var(--gold));
+  box-shadow: inset 0 0 30px rgba(0,0,0,0.2);
+}
+
+.chapter-card:hover {
+  transform: translateY(-6px);
+  box-shadow: 0 24px 60px rgba(0, 0, 0, 0.5);
+}
+
+.chapter-card__number {
+  font-family: var(--font-display);
+  font-size: 3rem;
+  font-weight: 300;
+  color: rgba(240, 235, 224, 0.08);
+  line-height: 1;
+  margin-bottom: -0.5rem;
+  letter-spacing: 0.05em;
+}
+
+.chapter-card__name {
+  font-family: var(--font-display);
+  font-size: 1.4rem;
+  font-weight: 400;
+  letter-spacing: 0.05em;
+  margin-bottom: 0.5rem;
+}
+
+.chapter-card__mood {
+  font-size: 0.7rem;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  text-transform: uppercase;
+  margin-bottom: var(--space-sm);
+}
+
+.chapter-card__bar {
+  height: 2px;
+  border-radius: 2px;
+  margin-bottom: var(--space-sm);
+  background: var(--chapter-accent, var(--gold));
+  width: 40px;
+  transition: width 0.5s var(--ease-out);
+}
+
+.chapter-card:hover .chapter-card__bar {
+  width: 100%;
+}
+
+.chapter-card__narrative {
+  font-size: 0.88rem;
+  color: var(--text-muted);
+  line-height: 1.7;
+  margin-bottom: var(--space-md);
+}
+
+.chapter-card__link {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.4rem;
+  font-size: 0.75rem;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--chapter-accent, var(--gold));
+  transition: gap 0.3s ease;
+}
+
+.chapter-card:hover .chapter-card__link {
+  gap: 0.7rem;
+}
+
+/* ==================== FEATURED PRODUCTS ==================== */
+
+.featured {
+  padding: var(--space-xl) 0;
+}
+
+.featured__header {
+  text-align: center;
+  margin-bottom: var(--space-lg);
+}
+
+.featured__label {
+  font-size: 0.7rem;
+  letter-spacing: 0.25em;
+  text-transform: uppercase;
+  color: var(--gold);
+  margin-bottom: var(--space-sm);
+}
+
+.featured__title {
+  font-family: var(--font-display);
+  font-size: clamp(2rem, 4vw, 3rem);
+  font-weight: 300;
+}
+
+.featured__grid {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--space-md);
+}
+
+@media (min-width: 768px) {
+  .featured__grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (min-width: 1024px) {
+  .featured__grid {
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+
+/* Product card SVG art */
+.product-art {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+/* ==================== BRAND STORY TEASER ==================== */
+
+.story-teaser {
+  padding: var(--space-2xl) 0;
+  text-align: center;
+  position: relative;
+  overflow: hidden;
+}
+
+.story-teaser::before,
+.story-teaser::after {
+  content: '';
+  position: absolute;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  opacity: 0.25;
+}
+
+.story-teaser::before { top: 0; }
+.story-teaser::after  { bottom: 0; }
+
+.story-teaser__inner {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 0 var(--space-md);
+}
+
+.story-teaser__ornament {
+  font-size: 2rem;
+  color: var(--gold);
+  opacity: 0.3;
+  margin-bottom: var(--space-md);
+  font-family: var(--font-display);
+}
+
+.story-teaser__quote {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: clamp(1.4rem, 3vw, 2.2rem);
+  font-weight: 300;
+  line-height: 1.55;
+  color: var(--text);
+  margin-bottom: var(--space-lg);
+}
+
+.story-teaser__quote span {
+  color: var(--gold);
+}
+
+.story-teaser__cta {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-size: 0.8rem;
+  letter-spacing: 0.18em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  transition: all var(--transition-base);
+}
+
+.story-teaser__cta::before,
+.story-teaser__cta::after {
+  content: '';
+  display: block;
+  width: 30px;
+  height: 1px;
+  background: var(--text-muted);
+  transition: all var(--transition-base);
+}
+
+.story-teaser__cta:hover {
+  color: var(--gold);
+}
+
+.story-teaser__cta:hover::before,
+.story-teaser__cta:hover::after {
+  background: var(--gold);
+  width: 50px;
+}

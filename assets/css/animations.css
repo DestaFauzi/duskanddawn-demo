@@ -1,0 +1,345 @@
+/* ============================================================
+   ANIMATIONS.CSS — Keyframes, Transition Classes, Reveal System
+   ============================================================ */
+
+/* ==================== KEYFRAMES ==================== */
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes slideRight {
+  from {
+    opacity: 0;
+    transform: translateX(-40px);
+  }
+  to {
+    opacity: 1;
+    transform: translateX(0);
+  }
+}
+
+@keyframes slideUp {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+@keyframes scaleIn {
+  from {
+    opacity: 0;
+    transform: scale(0.95);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Scroll indicator */
+@keyframes scrollLine {
+  0%   { transform: scaleY(0); transform-origin: top; opacity: 1; }
+  45%  { transform: scaleY(1); transform-origin: top; opacity: 1; }
+  55%  { transform: scaleY(1); transform-origin: bottom; opacity: 1; }
+  100% { transform: scaleY(0); transform-origin: bottom; opacity: 0; }
+}
+
+/* Hero blob morphing */
+@keyframes blobMorph1 {
+  0%, 100% {
+    border-radius: 60% 40% 30% 70% / 60% 30% 70% 40%;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    border-radius: 40% 60% 70% 30% / 40% 70% 30% 60%;
+    transform: scale(1.05) rotate(3deg);
+  }
+  66% {
+    border-radius: 70% 30% 50% 50% / 30% 60% 40% 70%;
+    transform: scale(0.97) rotate(-2deg);
+  }
+}
+
+@keyframes blobMorph2 {
+  0%, 100% {
+    border-radius: 40% 60% 60% 40% / 70% 30% 70% 30%;
+    transform: scale(1) rotate(0deg);
+  }
+  33% {
+    border-radius: 60% 40% 40% 60% / 30% 70% 30% 70%;
+    transform: scale(0.95) rotate(-4deg);
+  }
+  66% {
+    border-radius: 50% 50% 30% 70% / 60% 40% 60% 40%;
+    transform: scale(1.04) rotate(2deg);
+  }
+}
+
+@keyframes blobMorph3 {
+  0%, 100% {
+    border-radius: 50% 50% 40% 60% / 40% 60% 50% 50%;
+    transform: scale(1) rotate(0deg);
+  }
+  50% {
+    border-radius: 30% 70% 70% 30% / 50% 50% 40% 60%;
+    transform: scale(1.06) rotate(5deg);
+  }
+}
+
+@keyframes float {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(-12px); }
+}
+
+@keyframes floatReverse {
+  0%, 100% { transform: translateY(0px); }
+  50%       { transform: translateY(12px); }
+}
+
+@keyframes pulse {
+  0%, 100% { opacity: 0.4; }
+  50%       { opacity: 0.8; }
+}
+
+@keyframes rotate {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -200% center; }
+  100% { background-position: 200% center; }
+}
+
+@keyframes drawLine {
+  from { stroke-dashoffset: 1000; }
+  to   { stroke-dashoffset: 0; }
+}
+
+@keyframes expandWidth {
+  from { width: 0; }
+  to   { width: 100%; }
+}
+
+/* ==================== UTILITY CLASSES ==================== */
+
+/* Base state — hidden before reveal */
+[data-reveal] {
+  opacity: 0;
+  transform: translateY(30px);
+  transition: opacity 0.8s var(--ease-out), transform 0.8s var(--ease-out);
+}
+
+[data-reveal="slide-right"] {
+  opacity: 0;
+  transform: translateX(-40px);
+  transition: opacity 0.7s var(--ease-out), transform 0.7s var(--ease-out);
+}
+
+[data-reveal="fade-in"] {
+  opacity: 0;
+  transform: none;
+  transition: opacity 0.6s ease;
+}
+
+[data-reveal="scale-in"] {
+  opacity: 0;
+  transform: scale(0.95);
+  transition: opacity 0.6s var(--ease-out), transform 0.6s var(--ease-out);
+}
+
+/* Visible state — added by JS */
+[data-reveal].is-visible {
+  opacity: 1;
+  transform: translate(0, 0) scale(1);
+}
+
+/* Stagger delays via data-delay */
+[data-delay="100"] { transition-delay: 0.1s; }
+[data-delay="200"] { transition-delay: 0.2s; }
+[data-delay="300"] { transition-delay: 0.3s; }
+[data-delay="400"] { transition-delay: 0.4s; }
+[data-delay="500"] { transition-delay: 0.5s; }
+[data-delay="600"] { transition-delay: 0.6s; }
+[data-delay="700"] { transition-delay: 0.7s; }
+[data-delay="800"] { transition-delay: 0.8s; }
+
+/* ==================== NAMED ANIMATION CLASSES ==================== */
+
+.anim-fade-up {
+  animation: fadeUp 0.8s var(--ease-out) both;
+}
+
+.anim-fade-in {
+  animation: fadeIn 0.6s ease both;
+}
+
+.anim-slide-right {
+  animation: slideRight 0.7s var(--ease-out) both;
+}
+
+.anim-scale-in {
+  animation: scaleIn 0.6s var(--ease-out) both;
+}
+
+.anim-float {
+  animation: float 6s ease-in-out infinite;
+}
+
+.anim-float-reverse {
+  animation: floatReverse 7s ease-in-out infinite;
+}
+
+.anim-pulse {
+  animation: pulse 3s ease-in-out infinite;
+}
+
+/* ==================== SCROLL INDICATOR ==================== */
+
+.scroll-indicator {
+  position: absolute;
+  bottom: 2.5rem;
+  left: 50%;
+  transform: translateX(-50%);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0.5rem;
+  z-index: 10;
+}
+
+.scroll-indicator__label {
+  font-size: 0.65rem;
+  letter-spacing: 0.2em;
+  text-transform: uppercase;
+  color: var(--text-muted);
+  writing-mode: horizontal-tb;
+}
+
+.scroll-indicator__line {
+  width: 1px;
+  height: 60px;
+  background: rgba(240, 235, 224, 0.2);
+  position: relative;
+  overflow: hidden;
+}
+
+.scroll-indicator__line::after {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: var(--gold);
+  animation: scrollLine 2s ease-in-out infinite;
+}
+
+/* ==================== PAGE TRANSITION ==================== */
+
+.page-transition-overlay {
+  position: fixed;
+  inset: 0;
+  background: var(--bg);
+  z-index: 9998;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.2s ease;
+}
+
+.page-transition-overlay.active {
+  opacity: 1;
+  pointer-events: all;
+}
+
+/* ==================== HERO BLOBS ==================== */
+
+.hero-blob {
+  position: absolute;
+  border-radius: 50%;
+  filter: blur(60px);
+  opacity: 0.12;
+  pointer-events: none;
+}
+
+.hero-blob--1 {
+  width: 500px;
+  height: 500px;
+  background: radial-gradient(circle, var(--dawn-color), transparent 70%);
+  top: -100px;
+  right: -100px;
+  animation: blobMorph1 18s ease-in-out infinite, float 10s ease-in-out infinite;
+}
+
+.hero-blob--2 {
+  width: 400px;
+  height: 400px;
+  background: radial-gradient(circle, var(--chasing-color), transparent 70%);
+  bottom: 0;
+  left: -80px;
+  animation: blobMorph2 22s ease-in-out infinite, floatReverse 12s ease-in-out infinite;
+}
+
+.hero-blob--3 {
+  width: 300px;
+  height: 300px;
+  background: radial-gradient(circle, var(--gold), transparent 70%);
+  top: 40%;
+  left: 40%;
+  animation: blobMorph3 15s ease-in-out infinite, pulse 8s ease-in-out infinite;
+}
+
+/* ==================== GOLD SHIMMER TEXT ==================== */
+
+.shimmer-text {
+  background: linear-gradient(
+    90deg,
+    var(--gold) 0%,
+    #f0d080 25%,
+    var(--gold) 50%,
+    #c9a84c 75%,
+    var(--gold) 100%
+  );
+  background-size: 200% auto;
+  -webkit-background-clip: text;
+  background-clip: text;
+  -webkit-text-fill-color: transparent;
+  animation: shimmer 4s linear infinite;
+}
+
+/* ==================== GOLD ACCENT LINE ==================== */
+
+.gold-line {
+  display: block;
+  height: 1px;
+  background: linear-gradient(90deg, transparent, var(--gold), transparent);
+  width: 100%;
+  opacity: 0.4;
+}
+
+/* ==================== HOVER GLOW ==================== */
+
+.hover-glow {
+  transition: box-shadow var(--transition-base);
+}
+
+.hover-glow:hover {
+  box-shadow: 0 0 30px rgba(201, 168, 76, 0.15);
+}

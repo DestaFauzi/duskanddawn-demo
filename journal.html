@@ -1,0 +1,313 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Jurnal — Dusk &amp; Dawn</title>
+  <meta name="description" content="Tulisan-tulisan tentang transisi, seni abstrak, dan kehidupan manusia. Jurnal dari Dusk & Dawn.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/journal.css">
+</head>
+<body>
+
+  <a href="#main-content" class="skip-link">Langsung ke konten</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dusk & Dawn - Beranda">
+        <span class="navbar__logo-mark">D&amp;D</span>
+        <span class="navbar__logo-wordmark">DUSK &amp; DAWN</span>
+      </a>
+      <ul class="navbar__links" role="list">
+        <li><a href="collections.html" class="navbar__link">Koleksi</a></li>
+        <li><a href="journal.html" class="navbar__link">Jurnal</a></li>
+        <li><a href="about.html" class="navbar__link">Tentang</a></li>
+        <li><a href="contact.html" class="navbar__link">Kontak</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <a href="cart.html" class="navbar__cart" aria-label="Keranjang belanja">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/><line x1="3" y1="6" x2="21" y2="6"/><path d="M16 10a4 4 0 01-8 0"/></svg>
+          <span class="cart-badge" aria-live="polite"></span>
+        </a>
+        <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <div class="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <a href="index.html" class="mobile-nav__link">Beranda</a>
+    <a href="collections.html" class="mobile-nav__link">Koleksi</a>
+    <a href="journal.html" class="mobile-nav__link">Jurnal</a>
+    <a href="about.html" class="mobile-nav__link">Tentang</a>
+    <a href="contact.html" class="mobile-nav__link">Kontak</a>
+    <a href="cart.html" class="mobile-nav__link">Keranjang</a>
+  </div>
+
+  <main id="main-content">
+
+    <!-- JOURNAL HERO -->
+    <div class="journal-hero">
+      <span class="journal-hero__eyebrow" data-reveal>Dusk &amp; Dawn</span>
+      <h1 class="journal-hero__title" data-reveal data-delay="100">Jurnal</h1>
+      <p class="journal-hero__subtitle text-accent" data-reveal data-delay="200">
+        "Tulisan-tulisan tentang transisi yang tidak pernah terlihat, tapi selalu dirasakan."
+      </p>
+    </div>
+
+    <!-- FEATURED ARTICLE -->
+    <section class="journal-featured section" aria-label="Artikel utama">
+      <div class="container">
+        <div class="journal-featured__card" data-reveal>
+          <div class="journal-featured__visual">
+            <div class="journal-featured__accent-bar" style="background:linear-gradient(90deg,#8a8a8a,#6b6560);"></div>
+            <svg viewBox="0 0 400 300" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+              <!-- Gray area abstract: layered translucent overlapping forms -->
+              <rect x="50" y="30" width="300" height="240" fill="none" stroke="rgba(138,138,138,0.1)" stroke-width="1"/>
+              <rect x="80" y="60" width="240" height="180" fill="rgba(138,138,138,0.04)"/>
+              <rect x="100" y="80" width="200" height="140" fill="rgba(138,138,138,0.04)" transform="rotate(3,200,150)"/>
+              <ellipse cx="200" cy="150" rx="120" ry="90" fill="rgba(138,138,138,0.06)" transform="rotate(-5,200,150)"/>
+              <ellipse cx="200" cy="150" rx="70" ry="55" fill="rgba(138,138,138,0.08)"/>
+              <circle cx="200" cy="150" rx="30" r="30" fill="rgba(138,138,138,0.12)" stroke="rgba(138,138,138,0.3)" stroke-width="1"/>
+              <line x1="50" y1="150" x2="350" y2="150" stroke="rgba(138,138,138,0.12)" stroke-width="0.8"/>
+              <line x1="200" y1="30" x2="200" y2="270" stroke="rgba(138,138,138,0.1)" stroke-width="0.8"/>
+            </svg>
+          </div>
+          <div class="journal-featured__content">
+            <div class="journal-featured__meta">
+              <span class="badge badge--gray">Gray Area</span>
+              <span class="journal-featured__read-time">5 menit baca</span>
+              <span class="journal-featured__label">Artikel Terkurasi</span>
+            </div>
+            <h2 class="journal-featured__title">Tentang Transisi yang Tidak Pernah Terlihat</h2>
+            <p class="journal-featured__excerpt">
+              Ada fase-fase dalam hidup yang tidak punya foto kenangan, tidak ada perayaan, tidak ada
+              pengumuman di beranda media sosial. Fase ketika kamu berubah tanpa ada yang tahu —
+              kadang tanpa kamu sendiri menyadarinya. Ini adalah cerita tentang transisi-transisi itu.
+            </p>
+            <button class="btn btn--ghost" onclick="window.DD && window.DD.showToast('Artikel ini sedang dalam penulisan — nantikan.')">
+              Baca Selengkapnya →
+            </button>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- JOURNAL GRID -->
+    <section class="journal-section" aria-label="Semua artikel jurnal">
+      <div class="container">
+        <div class="journal-grid" role="list">
+
+          <!-- Article 1: Gray Area -->
+          <article class="journal-card" role="listitem" data-reveal>
+            <div class="journal-card__accent-bar" style="background:var(--gray-color);" aria-hidden="true"></div>
+            <div class="journal-card__visual" style="background:linear-gradient(135deg,#0e0e0e,#141414);">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <rect x="20" y="20" width="160" height="120" fill="none" stroke="rgba(138,138,138,0.15)" stroke-width="1"/>
+                <rect x="40" y="40" width="120" height="80" fill="rgba(138,138,138,0.06)"/>
+                <circle cx="100" cy="80" r="28" fill="rgba(138,138,138,0.1)" stroke="rgba(138,138,138,0.25)" stroke-width="1"/>
+              </svg>
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__meta">
+                <span class="badge badge--gray">Gray Area</span>
+                <span class="journal-card__read-time">5 menit baca</span>
+              </div>
+              <h3 class="journal-card__title">Tentang Transisi yang Tidak Pernah Terlihat</h3>
+              <p class="journal-card__excerpt">Fase-fase perubahan yang terjadi dalam diam — tanpa penonton, tanpa pengumuman, hanya kamu dan kesunyian yang mengajarkan.</p>
+              <span class="journal-card__read-link" aria-label="Baca artikel tentang transisi">Baca →</span>
+            </div>
+          </article>
+
+          <!-- Article 2: Dawn -->
+          <article class="journal-card" role="listitem" data-reveal data-delay="100">
+            <div class="journal-card__accent-bar" style="background:var(--dawn-color);" aria-hidden="true"></div>
+            <div class="journal-card__visual" style="background:linear-gradient(135deg,#0f0a05,#1a1008);">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="100" cy="100" r="55" fill="rgba(245,215,181,0.08)"/>
+                <circle cx="100" cy="80" r="35" fill="rgba(245,215,181,0.1)"/>
+                <circle cx="100" cy="62" r="18" fill="rgba(245,215,181,0.18)"/>
+                <circle cx="100" cy="50" r="8" fill="rgba(245,215,181,0.3)"/>
+                <path d="M60 90 Q100 55 140 90" stroke="rgba(245,215,181,0.3)" stroke-width="1.5" fill="none"/>
+              </svg>
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__meta">
+                <span class="badge badge--dawn">Dawn</span>
+                <span class="journal-card__read-time">3 menit baca</span>
+              </div>
+              <h3 class="journal-card__title">Mengapa Kami Memilih Abstrak</h3>
+              <p class="journal-card__excerpt">Seni abstrak tidak berbohong. Ia tidak berpura-pura bahwa segala sesuatu punya bentuk yang rapi dan bisa langsung dipahami.</p>
+              <span class="journal-card__read-link" aria-label="Baca artikel tentang seni abstrak">Baca →</span>
+            </div>
+          </article>
+
+          <!-- Article 3: Midnight -->
+          <article class="journal-card" role="listitem" data-reveal data-delay="200">
+            <div class="journal-card__accent-bar" style="background:#3d2b6e;" aria-hidden="true"></div>
+            <div class="journal-card__visual" style="background:linear-gradient(135deg,#040408,#080618);">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="100" cy="80" r="60" fill="rgba(26,16,48,0.6)"/>
+                <circle cx="100" cy="80" r="40" fill="none" stroke="rgba(61,43,110,0.4)" stroke-width="1"/>
+                <circle cx="100" cy="80" r="18" fill="rgba(61,43,110,0.2)"/>
+                <circle cx="40" cy="40" r="2" fill="rgba(255,255,255,0.15)"/>
+                <circle cx="160" cy="35" r="1.5" fill="rgba(255,255,255,0.12)"/>
+                <circle cx="165" cy="130" r="2" fill="rgba(255,255,255,0.1)"/>
+              </svg>
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__meta">
+                <span class="badge badge--void">Midnight</span>
+                <span class="journal-card__read-time">7 menit baca</span>
+              </div>
+              <h3 class="journal-card__title">Void Bukan Kekosongan</h3>
+              <p class="journal-card__excerpt">Ada perbedaan besar antara kosong dan void. Kosong tidak punya isi. Void adalah ruang yang menunggu — penuh dengan kemungkinan yang belum lahir.</p>
+              <span class="journal-card__read-link" aria-label="Baca artikel tentang void">Baca →</span>
+            </div>
+          </article>
+
+          <!-- Article 4: Chasing -->
+          <article class="journal-card" role="listitem" data-reveal>
+            <div class="journal-card__accent-bar" style="background:var(--chasing-color);" aria-hidden="true"></div>
+            <div class="journal-card__visual" style="background:linear-gradient(135deg,#06080f,#08101e);">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="20" y1="140" x2="180" y2="20" stroke="rgba(58,95,200,0.5)" stroke-width="2.5"/>
+                <line x1="20" y1="160" x2="180" y2="40" stroke="rgba(58,95,200,0.2)" stroke-width="1.5"/>
+                <polygon points="100,20 165,100 35,100" fill="rgba(58,95,200,0.1)" stroke="rgba(58,95,200,0.25)" stroke-width="1"/>
+                <circle cx="150" cy="35" r="12" fill="none" stroke="rgba(58,95,200,0.3)" stroke-width="1.5"/>
+              </svg>
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__meta">
+                <span class="badge badge--chasing">Chasing</span>
+                <span class="journal-card__read-time">4 menit baca</span>
+              </div>
+              <h3 class="journal-card__title">Seni sebagai Bahasa yang Tidak Bisa Dibohongi</h3>
+              <p class="journal-card__excerpt">Kata-kata bisa dimanipulasi. Logika bisa diputarbalikkan. Tapi ketika tubuhmu bereaksi terhadap sebuah karya — itu jujur.</p>
+              <span class="journal-card__read-link" aria-label="Baca artikel tentang seni sebagai bahasa">Baca →</span>
+            </div>
+          </article>
+
+          <!-- Article 5: Golden Hour -->
+          <article class="journal-card" role="listitem" data-reveal data-delay="100">
+            <div class="journal-card__accent-bar" style="background:var(--golden-color);" aria-hidden="true"></div>
+            <div class="journal-card__visual" style="background:linear-gradient(135deg,#100804,#1e1008);">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="100" cy="80" r="35" fill="rgba(212,131,42,0.18)"/>
+                <path d="M100 10 L100 55" stroke="rgba(212,131,42,0.4)" stroke-width="2"/>
+                <path d="M100 105 L100 150" stroke="rgba(212,131,42,0.25)" stroke-width="1.5"/>
+                <path d="M20 80 L60 80" stroke="rgba(212,131,42,0.35)" stroke-width="1.5"/>
+                <path d="M140 80 L180 80" stroke="rgba(212,131,42,0.25)" stroke-width="1.5"/>
+                <path d="M38 28 L65 55" stroke="rgba(212,131,42,0.3)" stroke-width="1.5"/>
+                <path d="M162 28 L135 55" stroke="rgba(212,131,42,0.2)" stroke-width="1.5"/>
+                <circle cx="100" cy="80" r="14" fill="rgba(212,131,42,0.4)"/>
+              </svg>
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__meta">
+                <span class="badge badge--golden">Golden Hour</span>
+                <span class="journal-card__read-time">6 menit baca</span>
+              </div>
+              <h3 class="journal-card__title">Golden Hour: Berdamai dengan Waktu</h3>
+              <p class="journal-card__excerpt">Ada waktu-waktu dalam hidup ketika cahaya paling indah datang tepat ketika kamu mulai lelah. Itulah golden hour — baik dalam fotografi maupun dalam jiwa.</p>
+              <span class="journal-card__read-link" aria-label="Baca artikel tentang golden hour">Baca →</span>
+            </div>
+          </article>
+
+          <!-- Article 6: New Dawn -->
+          <article class="journal-card" role="listitem" data-reveal data-delay="200">
+            <div class="journal-card__accent-bar" style="background:var(--newdawn-color);" aria-hidden="true"></div>
+            <div class="journal-card__visual" style="background:linear-gradient(135deg,#050e08,#081510);">
+              <svg viewBox="0 0 200 160" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M20 130 Q60 40 100 80 Q140 120 180 30" stroke="rgba(201,232,212,0.4)" stroke-width="2" fill="none"/>
+                <path d="M20 145 Q70 55 110 95 Q150 135 180 45" stroke="rgba(201,232,212,0.2)" stroke-width="1.5" fill="none"/>
+                <circle cx="100" cy="80" r="30" fill="rgba(201,232,212,0.07)"/>
+                <circle cx="155" cy="40" r="18" fill="rgba(201,232,212,0.12)"/>
+                <circle cx="155" cy="40" r="8" fill="rgba(201,232,212,0.25)"/>
+              </svg>
+            </div>
+            <div class="journal-card__body">
+              <div class="journal-card__meta">
+                <span class="badge badge--newdawn">New Dawn</span>
+                <span class="journal-card__read-time">4 menit baca</span>
+              </div>
+              <h3 class="journal-card__title">Setelah Semua Ini: New Dawn</h3>
+              <p class="journal-card__excerpt">Kelahiran kembali bukan berarti melupakanmusim-musim sebelumnya. Ia adalah mengintegrasikan seluruh perjalanan — luka, cahaya, dan semua yang ada di antaranya.</p>
+              <span class="journal-card__read-link" aria-label="Baca artikel tentang new dawn">Baca →</span>
+            </div>
+          </article>
+
+        </div>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- FOOTER -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+        <div class="footer__brand">
+          <div class="footer__brand-name">D&amp;D · DUSK &amp; DAWN</div>
+          <p class="footer__brand-tagline text-accent">"Antara fajar dan senja, ada kamu."</p>
+        </div>
+        <div>
+          <h3 class="footer__heading">Navigasi</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html" class="footer__link">Koleksi</a></li>
+            <li><a href="journal.html" class="footer__link">Jurnal</a></li>
+            <li><a href="about.html" class="footer__link">Tentang</a></li>
+            <li><a href="contact.html" class="footer__link">Kontak</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__heading">Chapter</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html#dawn" class="footer__link">Dawn</a></li>
+            <li><a href="collections.html#chasing" class="footer__link">Chasing</a></li>
+            <li><a href="collections.html#gray" class="footer__link">Gray Area</a></li>
+            <li><a href="collections.html#void" class="footer__link">Midnight</a></li>
+            <li><a href="collections.html#golden" class="footer__link">Golden Hour</a></li>
+            <li><a href="collections.html#newdawn" class="footer__link">New Dawn</a></li>
+          </ul>
+        </div>
+        <div>
+          <h3 class="footer__heading">Newsletter</h3>
+          <p class="footer__newsletter-text">Jadilah yang pertama tahu saat chapter baru dimulai.</p>
+          <form class="footer__newsletter-form" name="newsletter" method="POST" data-netlify="true">
+            <input type="hidden" name="form-name" value="newsletter">
+            <input type="email" name="email" class="footer__newsletter-input" placeholder="emailmu@..." required aria-label="Email newsletter">
+            <button type="submit" class="footer__newsletter-btn">Daftar</button>
+          </form>
+        </div>
+      </div>
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Dusk &amp; Dawn. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5"><rect x="2" y="2" width="20" height="20" rx="5"/><circle cx="12" cy="12" r="5"/><circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/></svg>
+            Instagram
+          </a>
+          <a href="https://tiktok.com/@duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-5.77.11 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.77a4.85 4.85 0 01-1.03-.08z"/></svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/journal.js"></script>
+
+</body>
+</html>

@@ -1,0 +1,5 @@
+# Dusk & Dawn — Netlify Redirects
+# Multi-page static site — no SPA redirect needed
+# Netlify Forms handled automatically
+
+/404    /index.html   404

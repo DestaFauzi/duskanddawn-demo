@@ -1,0 +1,453 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Dusk &amp; Dawn — Antara Fajar dan Senja, Ada Kamu</title>
+  <meta name="description" content="Brand fashion art-led yang menjual narasi tentang transisi kehidupan manusia. Enam chapter, satu perjalanan.">
+  <meta property="og:title" content="Dusk & Dawn — Antara Fajar dan Senja, Ada Kamu">
+  <meta property="og:description" content="Kami tidak menjual pakaian. Kami menjual narasi tentang transisi kehidupan manusia.">
+  <meta property="og:type" content="website">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:ital,wght@0,300;0,400;0,500;1,300;1,400&family=DM+Sans:wght@300;400;500&family=IM+Fell+English:ital@0;1&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/main.css">
+  <link rel="stylesheet" href="assets/css/components.css">
+  <link rel="stylesheet" href="assets/css/animations.css">
+  <link rel="stylesheet" href="assets/css/home.css">
+</head>
+<body>
+
+  <!-- SKIP LINK -->
+  <a href="#main-content" class="skip-link">Langsung ke konten</a>
+
+  <!-- NAVBAR -->
+  <nav class="navbar" role="navigation" aria-label="Navigasi utama">
+    <div class="navbar__inner">
+      <a href="index.html" class="navbar__logo" aria-label="Dusk & Dawn - Beranda">
+        <span class="navbar__logo-mark">D&amp;D</span>
+        <span class="navbar__logo-wordmark">DUSK &amp; DAWN</span>
+      </a>
+      <ul class="navbar__links" role="list">
+        <li><a href="collections.html" class="navbar__link">Koleksi</a></li>
+        <li><a href="journal.html" class="navbar__link">Jurnal</a></li>
+        <li><a href="about.html" class="navbar__link">Tentang</a></li>
+        <li><a href="contact.html" class="navbar__link">Kontak</a></li>
+      </ul>
+      <div style="display:flex;align-items:center;gap:1rem;">
+        <a href="cart.html" class="navbar__cart" aria-label="Keranjang belanja">
+          <svg viewBox="0 0 24 24" aria-hidden="true">
+            <path d="M6 2L3 6v14a2 2 0 002 2h14a2 2 0 002-2V6l-3-4z"/>
+            <line x1="3" y1="6" x2="21" y2="6"/>
+            <path d="M16 10a4 4 0 01-8 0"/>
+          </svg>
+          <span class="cart-badge" aria-live="polite"></span>
+        </a>
+        <button class="navbar__hamburger" aria-label="Menu" aria-expanded="false" aria-controls="mobile-nav">
+          <span></span>
+          <span></span>
+          <span></span>
+        </button>
+      </div>
+    </div>
+  </nav>
+
+  <!-- MOBILE NAV -->
+  <div class="mobile-nav" id="mobile-nav" role="dialog" aria-modal="true" aria-label="Menu navigasi">
+    <a href="index.html" class="mobile-nav__link">Beranda</a>
+    <a href="collections.html" class="mobile-nav__link">Koleksi</a>
+    <a href="journal.html" class="mobile-nav__link">Jurnal</a>
+    <a href="about.html" class="mobile-nav__link">Tentang</a>
+    <a href="contact.html" class="mobile-nav__link">Kontak</a>
+    <a href="cart.html" class="mobile-nav__link">Keranjang</a>
+  </div>
+
+  <!-- MAIN CONTENT -->
+  <main id="main-content">
+
+    <!-- ===== HERO ===== -->
+    <section class="hero" aria-label="Hero">
+      <div class="hero__bg" aria-hidden="true">
+        <!-- Animated SVG background with feTurbulence for organic morphing -->
+        <svg class="hero__bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
+          <defs>
+            <filter id="hero-turbulence" x="-20%" y="-20%" width="140%" height="140%">
+              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="4" seed="8" result="noise"/>
+              <feDisplacementMap in="SourceGraphic" in2="noise" scale="120" xChannelSelector="R" yChannelSelector="G"/>
+            </filter>
+            <radialGradient id="blob-grad-1" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#f5d7b5" stop-opacity="0.18"/>
+              <stop offset="100%" stop-color="#f5d7b5" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="blob-grad-2" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#3a5fc8" stop-opacity="0.14"/>
+              <stop offset="100%" stop-color="#3a5fc8" stop-opacity="0"/>
+            </radialGradient>
+            <radialGradient id="blob-grad-3" cx="50%" cy="50%" r="50%">
+              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.1"/>
+              <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
+            </radialGradient>
+          </defs>
+
+          <!-- Background blobs -->
+          <ellipse cx="1100" cy="200" rx="500" ry="400" fill="url(#blob-grad-1)" filter="url(#hero-turbulence)"/>
+          <ellipse cx="200" cy="700" rx="450" ry="380" fill="url(#blob-grad-2)" filter="url(#hero-turbulence)"/>
+          <ellipse cx="720" cy="450" rx="300" ry="280" fill="url(#blob-grad-3)"/>
+
+          <!-- Subtle constellation lines -->
+          <g stroke="rgba(240,235,224,0.04)" stroke-width="1" fill="none">
+            <line x1="100" y1="100" x2="400" y2="300"/>
+            <line x1="400" y1="300" x2="750" y2="200"/>
+            <line x1="750" y1="200" x2="1100" y2="450"/>
+            <line x1="300" y1="700" x2="600" y2="550"/>
+            <line x1="600" y1="550" x2="900" y2="650"/>
+            <line x1="900" y1="650" x2="1300" y2="500"/>
+          </g>
+          <g fill="rgba(240,235,224,0.06)">
+            <circle cx="400" cy="300" r="2"/>
+            <circle cx="750" cy="200" r="2"/>
+            <circle cx="1100" cy="450" r="2"/>
+            <circle cx="600" cy="550" r="2"/>
+            <circle cx="900" cy="650" r="2"/>
+          </g>
+
+          <!-- Abstract horizon line -->
+          <path d="M0 520 Q360 480 720 510 Q1080 540 1440 500 L1440 900 L0 900 Z" fill="rgba(255,255,255,0.015)"/>
+        </svg>
+
+        <!-- CSS blobs for extra depth -->
+        <div class="hero-blob hero-blob--1"></div>
+        <div class="hero-blob hero-blob--2"></div>
+        <div class="hero-blob hero-blob--3"></div>
+      </div>
+
+      <div class="hero__content">
+        <p class="hero__eyebrow">Art-Led Fashion · Enam Chapter · Satu Perjalanan</p>
+        <h1 class="hero__title shimmer-text">DUSK &amp; DAWN</h1>
+        <p class="hero__tagline text-accent">"Antara fajar dan senja, ada kamu."</p>
+        <div class="hero__cta">
+          <a href="collections.html" class="btn btn--outline btn--lg">Mulai Perjalanan</a>
+        </div>
+      </div>
+
+      <!-- Scroll indicator -->
+      <div class="scroll-indicator" aria-hidden="true">
+        <div class="scroll-indicator__line"></div>
+      </div>
+    </section>
+
+    <!-- ===== PHILOSOPHY ===== -->
+    <section class="philosophy section" aria-labelledby="philosophy-heading">
+      <div class="container">
+        <div class="philosophy__grid">
+
+          <!-- Abstract SVG visual -->
+          <div class="philosophy__visual" data-reveal="slide-right">
+            <div class="philosophy__svg-wrap">
+              <svg viewBox="0 0 400 400" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <!-- Layered organic forms representing life's complexity -->
+                <circle cx="200" cy="200" r="160" fill="none" stroke="rgba(201,168,76,0.08)" stroke-width="1"/>
+                <circle cx="200" cy="200" r="120" fill="none" stroke="rgba(201,168,76,0.1)" stroke-width="0.8"/>
+
+                <!-- Dawn bloom -->
+                <ellipse cx="180" cy="160" rx="90" ry="110" fill="rgba(245,215,181,0.07)" transform="rotate(-20,180,160)"/>
+                <!-- Chasing vector -->
+                <path d="M80 280 Q180 120 320 200 Q380 240 340 320" stroke="rgba(58,95,200,0.15)" stroke-width="2" fill="none"/>
+                <!-- Gray area texture -->
+                <rect x="150" y="150" width="100" height="100" fill="rgba(138,138,138,0.05)" transform="rotate(15,200,200)"/>
+                <!-- Void fragment -->
+                <polygon points="200,80 260,180 140,180" fill="rgba(61,43,110,0.1)"/>
+                <!-- Golden rays -->
+                <path d="M200 200 L350 100 M200 200 L360 220 M200 200 L300 350" stroke="rgba(212,131,42,0.12)" stroke-width="1.5"/>
+                <!-- New dawn light -->
+                <ellipse cx="220" cy="240" rx="60" ry="40" fill="rgba(201,232,212,0.07)" transform="rotate(10,220,240)"/>
+
+                <!-- Central core -->
+                <circle cx="200" cy="200" r="8" fill="rgba(201,168,76,0.3)"/>
+                <circle cx="200" cy="200" r="4" fill="rgba(201,168,76,0.6)"/>
+              </svg>
+            </div>
+          </div>
+
+          <!-- Text block -->
+          <div class="philosophy__text-block" data-reveal>
+            <p class="philosophy__label" data-reveal data-delay="100">Filosofi Kami</p>
+            <div class="divider" style="margin-bottom:2rem;" data-reveal data-delay="150"></div>
+            <h2 class="philosophy__statement" data-reveal data-delay="200" id="philosophy-heading">
+              Kami tidak menjual pakaian.<br>
+              Kami menjual <em>narasi</em> — tentang transisi, tentang keberanian
+              untuk merasakan, tentang setiap fase yang membentuk siapa
+              kamu hari ini.
+            </h2>
+            <p class="philosophy__sub" data-reveal data-delay="300">
+              Setiap koleksi adalah bab dari satu cerita panjang tentang
+              kehidupan manusia. Bukan garis lurus dari lahir ke mati —
+              melainkan spiral penuh warna, kegelapan, cahaya, dan keberanian.
+            </p>
+            <div style="margin-top:2rem;" data-reveal data-delay="400">
+              <a href="about.html" class="btn btn--ghost">Kenali lebih jauh →</a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== SIX CHAPTERS ===== -->
+    <section class="chapters" aria-labelledby="chapters-heading">
+      <div class="chapters__header" data-reveal>
+        <h2 class="chapters__title" id="chapters-heading">Enam Chapter. Satu Perjalanan.</h2>
+        <p class="chapters__subtitle">Dari fajar pertama hingga kelahiran kembali.</p>
+      </div>
+
+      <div class="chapters__track" role="list" aria-label="Enam chapter koleksi">
+
+        <!-- 01 DAWN -->
+        <div class="chapter-card" data-chapter="dawn" role="listitem" style="--chapter-accent:#f5d7b5">
+          <div class="chapter-card__number">01</div>
+          <h3 class="chapter-card__name">Dawn</h3>
+          <p class="chapter-card__mood">Tender · Hopeful · Vulnerable</p>
+          <div class="chapter-card__bar" style="background:#f5d7b5;"></div>
+          <p class="chapter-card__narrative">Ketika cahaya pertama menyentuh kulit — saat semuanya masih mungkin.</p>
+          <a href="collections.html#dawn" class="chapter-card__link" aria-label="Jelajahi chapter Dawn">Jelajahi →</a>
+        </div>
+
+        <!-- 02 CHASING -->
+        <div class="chapter-card" data-chapter="chasing" role="listitem" style="--chapter-accent:#3a5fc8">
+          <div class="chapter-card__number">02</div>
+          <h3 class="chapter-card__name">Chasing</h3>
+          <p class="chapter-card__mood">Restless · Driven · Electric</p>
+          <div class="chapter-card__bar" style="background:#3a5fc8;"></div>
+          <p class="chapter-card__narrative">Berlari mengejar sesuatu yang belum punya nama — dan kamu tidak bisa berhenti.</p>
+          <a href="collections.html#chasing" class="chapter-card__link" aria-label="Jelajahi chapter Chasing">Jelajahi →</a>
+        </div>
+
+        <!-- 03 GRAY AREA -->
+        <div class="chapter-card" data-chapter="gray" role="listitem" style="--chapter-accent:#8a8a8a">
+          <div class="chapter-card__number">03</div>
+          <h3 class="chapter-card__name">Gray Area</h3>
+          <p class="chapter-card__mood">Contemplative · Heavy · Unresolved</p>
+          <div class="chapter-card__bar" style="background:#8a8a8a;"></div>
+          <p class="chapter-card__narrative">Di sini tidak ada hitam atau putih. Hanya kabut yang belajar berbicara.</p>
+          <a href="collections.html#gray" class="chapter-card__link" aria-label="Jelajahi chapter Gray Area">Jelajahi →</a>
+        </div>
+
+        <!-- 04 MIDNIGHT / VOID -->
+        <div class="chapter-card" data-chapter="void" role="listitem" style="--chapter-accent:#3d2b6e">
+          <div class="chapter-card__number">04</div>
+          <h3 class="chapter-card__name">Midnight</h3>
+          <p class="chapter-card__mood">Stark · Honest · Isolating</p>
+          <div class="chapter-card__bar" style="background:#3d2b6e;"></div>
+          <p class="chapter-card__narrative">Titik paling gelap selalu punya caranya untuk mengajarkan sesuatu tentang kejujuran.</p>
+          <a href="collections.html#void" class="chapter-card__link" aria-label="Jelajahi chapter Midnight">Jelajahi →</a>
+        </div>
+
+        <!-- 05 GOLDEN HOUR -->
+        <div class="chapter-card" data-chapter="golden" role="listitem" style="--chapter-accent:#d4832a">
+          <div class="chapter-card__number">05</div>
+          <h3 class="chapter-card__name">Golden Hour</h3>
+          <p class="chapter-card__mood">Nostalgic · Warm · Bittersweet</p>
+          <div class="chapter-card__bar" style="background:#d4832a;"></div>
+          <p class="chapter-card__narrative">Cahaya amber menyebar — berdamai dengan semua yang telah lewat dan belum tiba.</p>
+          <a href="collections.html#golden" class="chapter-card__link" aria-label="Jelajahi chapter Golden Hour">Jelajahi →</a>
+        </div>
+
+        <!-- 06 NEW DAWN -->
+        <div class="chapter-card" data-chapter="newdawn" role="listitem" style="--chapter-accent:#c9e8d4">
+          <div class="chapter-card__number">06</div>
+          <h3 class="chapter-card__name">New Dawn</h3>
+          <p class="chapter-card__mood">Resolved · Reborn · Powerful</p>
+          <div class="chapter-card__bar" style="background:#c9e8d4;"></div>
+          <p class="chapter-card__narrative">Setelah semua itu — kamu muncul. Lebih bijak. Berbeda. Baru.</p>
+          <a href="collections.html#newdawn" class="chapter-card__link" aria-label="Jelajahi chapter New Dawn">Jelajahi →</a>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- ===== FEATURED PRODUCTS ===== -->
+    <section class="featured section" aria-labelledby="featured-heading">
+      <div class="container">
+        <div class="featured__header" data-reveal>
+          <p class="featured__label">Pilihan Terkurasi</p>
+          <h2 class="featured__title" id="featured-heading">Pilihan dari Setiap Transisi</h2>
+        </div>
+
+        <div class="featured__grid" data-stagger="150">
+
+          <!-- Product 1: Dawn -->
+          <article class="card hover-glow" data-reveal data-chapter="dawn">
+            <div class="card__image" style="background:linear-gradient(135deg,#120c08,#1e1208);">
+              <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <ellipse cx="100" cy="180" rx="90" ry="80" fill="rgba(245,215,181,0.08)"/>
+                <ellipse cx="100" cy="140" rx="60" ry="75" fill="rgba(245,215,181,0.1)"/>
+                <ellipse cx="100" cy="100" rx="35" ry="50" fill="rgba(245,215,181,0.15)"/>
+                <circle cx="100" cy="70" r="20" fill="rgba(245,215,181,0.22)"/>
+                <circle cx="100" cy="55" r="9" fill="rgba(245,215,181,0.35)"/>
+                <path d="M55 130 Q100 80 145 130" stroke="rgba(245,215,181,0.3)" stroke-width="1.5" fill="none"/>
+                <path d="M40 160 Q100 100 160 160" stroke="rgba(201,168,76,0.2)" stroke-width="1" fill="none"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="badge badge--dawn card__chapter" aria-label="Chapter: Dawn">Dawn</span>
+              <h3 class="card__title">Fajar Pertama Tee</h3>
+              <p class="card__price">Rp 285.000</p>
+              <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"fp-tee-001","name":"Fajar Pertama Tee","chapter":"dawn","price":285000,"size":"M"}' aria-label="Tambah Fajar Pertama Tee ke keranjang">
+                Kenakan Ceritamu
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 2: Chasing -->
+          <article class="card hover-glow" data-reveal data-chapter="chasing">
+            <div class="card__image" style="background:linear-gradient(135deg,#080c1a,#0a1230);">
+              <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <line x1="20" y1="200" x2="180" y2="60" stroke="rgba(58,95,200,0.4)" stroke-width="2.5"/>
+                <line x1="20" y1="230" x2="180" y2="100" stroke="rgba(58,95,200,0.25)" stroke-width="1.5"/>
+                <line x1="20" y1="170" x2="180" y2="30" stroke="rgba(58,95,200,0.2)" stroke-width="1"/>
+                <polygon points="100,40 160,140 40,140" fill="rgba(58,95,200,0.12)" stroke="rgba(58,95,200,0.3)" stroke-width="1"/>
+                <circle cx="160" cy="60" r="18" fill="none" stroke="rgba(58,95,200,0.35)" stroke-width="1.5"/>
+                <circle cx="160" cy="60" r="8" fill="rgba(58,95,200,0.3)"/>
+                <path d="M20 130 Q80 80 140 110 Q180 130 170 180" stroke="rgba(255,255,255,0.15)" stroke-width="1" fill="none"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="badge badge--chasing card__chapter" aria-label="Chapter: Chasing">Chasing</span>
+              <h3 class="card__title">Kinetic Hoodie</h3>
+              <p class="card__price">Rp 425.000</p>
+              <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"kinetic-hoodie-001","name":"Kinetic Hoodie","chapter":"chasing","price":425000,"size":"M"}' aria-label="Tambah Kinetic Hoodie ke keranjang">
+                Kenakan Ceritamu
+              </button>
+            </div>
+          </article>
+
+          <!-- Product 3: Midnight -->
+          <article class="card hover-glow" data-reveal data-chapter="void">
+            <div class="card__image" style="background:linear-gradient(135deg,#040408,#080618);">
+              <svg viewBox="0 0 200 260" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <circle cx="100" cy="130" r="80" fill="rgba(26,16,48,0.5)"/>
+                <circle cx="100" cy="130" r="55" fill="none" stroke="rgba(61,43,110,0.4)" stroke-width="1"/>
+                <circle cx="100" cy="130" r="30" fill="rgba(61,43,110,0.15)"/>
+                <circle cx="100" cy="130" r="10" fill="rgba(61,43,110,0.4)"/>
+                <!-- Fragment stars -->
+                <circle cx="45" cy="70" r="2" fill="rgba(255,255,255,0.2)"/>
+                <circle cx="155" cy="55" r="1.5" fill="rgba(255,255,255,0.15)"/>
+                <circle cx="170" cy="180" r="1" fill="rgba(255,255,255,0.1)"/>
+                <circle cx="30" cy="190" r="2.5" fill="rgba(255,255,255,0.12)"/>
+                <circle cx="130" cy="40" r="1.5" fill="rgba(255,255,255,0.18)"/>
+                <path d="M40 130 L160 130" stroke="rgba(61,43,110,0.25)" stroke-width="0.8" stroke-dasharray="4 6"/>
+                <path d="M100 50 L100 210" stroke="rgba(61,43,110,0.2)" stroke-width="0.8" stroke-dasharray="4 6"/>
+              </svg>
+            </div>
+            <div class="card__body">
+              <span class="badge badge--void card__chapter" aria-label="Chapter: Midnight">Midnight</span>
+              <h3 class="card__title">Void Longsleeve</h3>
+              <p class="card__price">Rp 320.000</p>
+              <button class="btn btn--primary btn--sm" data-add-to-cart='{"id":"void-ls-001","name":"Void Longsleeve","chapter":"void","price":320000,"size":"M"}' aria-label="Tambah Void Longsleeve ke keranjang">
+                Kenakan Ceritamu
+              </button>
+            </div>
+          </article>
+
+        </div>
+
+        <div style="text-align:center;margin-top:3rem;" data-reveal>
+          <a href="collections.html" class="btn btn--outline">Lihat Semua Koleksi</a>
+        </div>
+      </div>
+    </section>
+
+    <!-- ===== BRAND STORY TEASER ===== -->
+    <section class="story-teaser" aria-labelledby="story-heading">
+      <div class="story-teaser__inner">
+        <div class="story-teaser__ornament" aria-hidden="true">&ldquo;</div>
+        <blockquote class="story-teaser__quote" id="story-heading">
+          Setiap helai adalah bab. Setiap bab adalah bagian dari
+          <span>cerita yang belum selesai.</span>
+        </blockquote>
+        <a href="about.html" class="story-teaser__cta" aria-label="Kenali Dusk & Dawn lebih jauh">
+          Kenali Kami
+        </a>
+      </div>
+    </section>
+
+  </main>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer" role="contentinfo">
+    <div class="container">
+      <div class="footer__grid">
+
+        <!-- Col 1: Brand -->
+        <div class="footer__brand">
+          <div class="footer__brand-name" aria-label="Dusk & Dawn">D&amp;D · DUSK &amp; DAWN</div>
+          <p class="footer__brand-tagline text-accent">"Antara fajar dan senja, ada kamu."</p>
+        </div>
+
+        <!-- Col 2: Navigation -->
+        <div>
+          <h3 class="footer__heading">Navigasi</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html" class="footer__link">Koleksi</a></li>
+            <li><a href="journal.html" class="footer__link">Jurnal</a></li>
+            <li><a href="about.html" class="footer__link">Tentang</a></li>
+            <li><a href="contact.html" class="footer__link">Kontak</a></li>
+            <li><a href="cart.html" class="footer__link">Keranjang</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 3: Chapters -->
+        <div>
+          <h3 class="footer__heading">Chapter</h3>
+          <ul class="footer__link-list" role="list">
+            <li><a href="collections.html#dawn" class="footer__link">Dawn</a></li>
+            <li><a href="collections.html#chasing" class="footer__link">Chasing</a></li>
+            <li><a href="collections.html#gray" class="footer__link">Gray Area</a></li>
+            <li><a href="collections.html#void" class="footer__link">Midnight</a></li>
+            <li><a href="collections.html#golden" class="footer__link">Golden Hour</a></li>
+            <li><a href="collections.html#newdawn" class="footer__link">New Dawn</a></li>
+          </ul>
+        </div>
+
+        <!-- Col 4: Newsletter -->
+        <div>
+          <h3 class="footer__heading">Newsletter</h3>
+          <p class="footer__newsletter-text">Jadilah yang pertama tahu saat chapter baru dimulai.</p>
+          <form class="footer__newsletter-form" name="newsletter" method="POST" data-netlify="true" aria-label="Form newsletter">
+            <input type="hidden" name="form-name" value="newsletter">
+            <input type="email" name="email" class="footer__newsletter-input" placeholder="emailmu@..." required aria-label="Alamat email">
+            <button type="submit" class="footer__newsletter-btn">Daftar</button>
+          </form>
+        </div>
+
+      </div>
+
+      <!-- Footer bottom -->
+      <div class="footer__bottom">
+        <p class="footer__copyright">© 2025 Dusk &amp; Dawn. All rights reserved.</p>
+        <div class="footer__socials">
+          <a href="https://instagram.com/duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="Instagram Dusk & Dawn">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.5" aria-hidden="true">
+              <rect x="2" y="2" width="20" height="20" rx="5" ry="5"/>
+              <circle cx="12" cy="12" r="5"/>
+              <circle cx="17.5" cy="6.5" r="1" fill="currentColor" stroke="none"/>
+            </svg>
+            Instagram
+          </a>
+          <a href="https://tiktok.com/@duskanddawn" target="_blank" rel="noopener noreferrer" class="footer__social-link" aria-label="TikTok Dusk & Dawn">
+            <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true">
+              <path d="M19.59 6.69a4.83 4.83 0 01-3.77-4.25V2h-3.45v13.67a2.89 2.89 0 01-2.88 2.5 2.89 2.89 0 01-2.89-2.89 2.89 2.89 0 012.89-2.89c.28 0 .54.04.79.1V9.01a6.27 6.27 0 00-.79-.05 6.34 6.34 0 00-6.34 6.34 6.34 6.34 0 006.34 6.34 6.34 6.34 0 006.33-6.34V8.69a8.18 8.18 0 004.79 1.53V6.77a4.85 4.85 0 01-1.03-.08z"/>
+            </svg>
+            TikTok
+          </a>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+  <script src="assets/js/animations.js"></script>
+  <script src="assets/js/cart.js"></script>
+  <script src="assets/js/home.js"></script>
+
+</body>
+</html>
