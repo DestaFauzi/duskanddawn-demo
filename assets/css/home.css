@@ -21,7 +21,7 @@
   position: absolute;
   inset: 0;
   z-index: 0;
-  overflow: hidden;
+  /* overflow intentionally NOT hidden — .hero clips; hidden here cuts fog layers */
 }
 
 /* ---- Fog Layer System ----
@@ -62,117 +62,166 @@
 /* Shared fog layer base */
 .fog-layer {
   position: absolute;
-  border-radius: 50%;
-  will-change: transform, border-radius;
+  will-change: transform;
   pointer-events: none;
+  z-index: 1;
 }
 
-/* Layer 1: Warm amber/dawn — top right quadrant */
+/* ----------------------------------------------------------------
+   Layer 1: DAWN warm amber — top-right, drifts left-down
+   Visible: strong centre opacity, moderate blur so colour shows
+---------------------------------------------------------------- */
 .fog-layer--1 {
-  width: 75vw;
-  height: 75vw;
-  max-width: 900px;
-  max-height: 900px;
-  top: -20%;
-  right: -15%;
-  background: radial-gradient(ellipse at center, rgba(245,215,181,0.18) 0%, rgba(201,140,60,0.06) 50%, transparent 75%);
-  filter: blur(70px);
-  animation: fog-drift-1 38s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  width: 65vw;
+  height: 65vw;
+  top: -5vh;
+  right: -8vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(245,215,181,0.50) 0%,
+    rgba(220,165,80,0.22) 40%,
+    transparent 72%
+  );
+  border-radius: 62% 38% 55% 45% / 48% 52% 48% 52%;
+  filter: blur(48px);
+  animation: fog-drift-1 36s ease-in-out infinite;
 }
 
-/* Layer 2: Deep blue/chasing — bottom left */
+/* ----------------------------------------------------------------
+   Layer 2: CHASING deep blue — bottom-left, drifts right-up
+---------------------------------------------------------------- */
 .fog-layer--2 {
-  width: 80vw;
-  height: 80vw;
-  max-width: 1000px;
-  max-height: 1000px;
-  bottom: -25%;
-  left: -20%;
-  background: radial-gradient(ellipse at center, rgba(58,95,200,0.16) 0%, rgba(30,50,140,0.05) 55%, transparent 78%);
-  filter: blur(90px);
-  animation: fog-drift-2 45s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  width: 70vw;
+  height: 70vw;
+  bottom: -8vh;
+  left: -10vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(58,95,200,0.45) 0%,
+    rgba(30,50,160,0.18) 42%,
+    transparent 70%
+  );
+  border-radius: 45% 55% 38% 62% / 52% 48% 55% 45%;
+  filter: blur(55px);
+  animation: fog-drift-2 42s ease-in-out infinite;
   animation-delay: -14s;
 }
 
-/* Layer 3: Gold — centre, subtle pulse */
+/* ----------------------------------------------------------------
+   Layer 3: GOLD centre mass — pulses slowly
+---------------------------------------------------------------- */
 .fog-layer--3 {
-  width: 55vw;
-  height: 55vw;
-  max-width: 700px;
-  max-height: 700px;
-  top: 20%;
-  left: 25%;
-  background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, rgba(180,140,50,0.03) 55%, transparent 78%);
-  filter: blur(100px);
-  animation: fog-drift-3 32s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  width: 50vw;
+  height: 50vw;
+  top: 15vh;
+  left: 28vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201,168,76,0.30) 0%,
+    rgba(180,140,50,0.10) 48%,
+    transparent 72%
+  );
+  border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%;
+  filter: blur(60px);
+  animation: fog-drift-3 30s ease-in-out infinite;
   animation-delay: -8s;
 }
 
-/* Layer 4: Midnight violet — bottom centre */
+/* ----------------------------------------------------------------
+   Layer 4: MIDNIGHT violet — lower centre, rises slowly
+---------------------------------------------------------------- */
 .fog-layer--4 {
-  width: 60vw;
-  height: 60vw;
-  max-width: 750px;
-  max-height: 750px;
-  bottom: -10%;
-  left: 30%;
-  background: radial-gradient(ellipse at center, rgba(61,43,110,0.14) 0%, rgba(40,20,80,0.04) 55%, transparent 80%);
-  filter: blur(80px);
-  animation: fog-drift-4 40s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  width: 55vw;
+  height: 55vw;
+  bottom: 5vh;
+  left: 22vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(80,50,140,0.40) 0%,
+    rgba(50,28,100,0.14) 46%,
+    transparent 72%
+  );
+  border-radius: 55% 45% 62% 38% / 40% 60% 52% 48%;
+  filter: blur(50px);
+  animation: fog-drift-4 38s ease-in-out infinite;
   animation-delay: -22s;
 }
 
-/* Layer 5: Gossamer mid — top left */
+/* ----------------------------------------------------------------
+   Layer 5: Soft warm wash — top-left, very slow
+---------------------------------------------------------------- */
 .fog-layer--5 {
-  width: 50vw;
-  height: 50vw;
-  max-width: 650px;
-  max-height: 650px;
-  top: 10%;
-  left: 5%;
-  background: radial-gradient(ellipse at center, rgba(240,230,215,0.06) 0%, transparent 70%);
-  filter: blur(60px);
-  animation: fog-drift-2 28s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  width: 55vw;
+  height: 55vw;
+  top: 8vh;
+  left: -6vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(240,220,190,0.20) 0%,
+    transparent 66%
+  );
+  border-radius: 58% 42% 50% 50% / 45% 55% 45% 55%;
+  filter: blur(45px);
+  animation: fog-drift-2 26s ease-in-out infinite;
   animation-delay: -5s;
 }
 
-/* Layer 6: Ultra-wide ambient base — full width wash */
+/* ----------------------------------------------------------------
+   Layer 6: Wide ambient base wash — centre horizontal band
+---------------------------------------------------------------- */
 .fog-layer--6 {
-  width: 120vw;
-  height: 60vh;
-  top: 20%;
-  left: -10%;
-  background: radial-gradient(ellipse at 50% 50%, rgba(245,215,181,0.04) 0%, rgba(201,168,76,0.02) 40%, transparent 70%);
-  filter: blur(120px);
+  width: 100vw;
+  height: 55vh;
+  top: 22vh;
+  left: 0;
+  background: radial-gradient(
+    ellipse at 50% 50%,
+    rgba(245,215,181,0.10) 0%,
+    rgba(201,168,76,0.04) 38%,
+    transparent 68%
+  );
   border-radius: 50%;
-  animation: fog-drift-1 55s ease-in-out infinite;
-  animation-delay: -30s;
+  filter: blur(80px);
+  animation: fog-drift-1 50s ease-in-out infinite;
+  animation-delay: -28s;
 }
 
-/* Layer 7: Right-side shimmer — new dawn green tint */
+/* ----------------------------------------------------------------
+   Layer 7: NEW DAWN green — bottom-right shimmer
+---------------------------------------------------------------- */
 .fog-layer--7 {
-  width: 45vw;
-  height: 45vw;
-  max-width: 560px;
-  max-height: 560px;
-  bottom: 5%;
-  right: 5%;
-  background: radial-gradient(ellipse at center, rgba(201,232,212,0.08) 0%, transparent 68%);
-  filter: blur(75px);
-  animation: fog-drift-3 36s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
-  animation-delay: -18s;
+  width: 40vw;
+  height: 40vw;
+  bottom: 8vh;
+  right: 4vw;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(201,232,212,0.28) 0%,
+    rgba(150,210,180,0.08) 50%,
+    transparent 72%
+  );
+  border-radius: 48% 52% 55% 45% / 52% 48% 42% 58%;
+  filter: blur(52px);
+  animation: fog-drift-3 34s ease-in-out infinite;
+  animation-delay: -17s;
 }
 
-/* Layer 8: Subtle top bleed to darken edges */
+/* ----------------------------------------------------------------
+   Layer 8: Edge vignette — pure CSS gradient, no animation
+---------------------------------------------------------------- */
 .fog-layer--8 {
   width: 100vw;
-  height: 40vh;
+  height: 100vh;
   top: 0;
   left: 0;
-  background: linear-gradient(to bottom, rgba(8,6,4,0.5) 0%, transparent 100%);
+  background:
+    linear-gradient(to bottom, rgba(8,6,4,0.55) 0%, transparent 30%),
+    linear-gradient(to right, rgba(5,5,10,0.35) 0%, transparent 25%),
+    linear-gradient(to left, rgba(5,5,10,0.30) 0%, transparent 25%);
   border-radius: 0;
   filter: none;
   animation: none;
+  z-index: 3;
 }
 
 .hero__bg-svg {
@@ -180,7 +229,7 @@
   inset: 0;
   width: 100%;
   height: 100%;
-  z-index: 2;
+  z-index: 4;
   pointer-events: none;
 }
 
@@ -199,6 +248,9 @@
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: var(--space-md);
+  text-align: center;
+  width: 100%;
+  display: block;
   opacity: 0;
   animation: fadeIn 0.8s ease 0.3s forwards;
 }
