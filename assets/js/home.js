@@ -5,37 +5,11 @@
 (function () {
   'use strict';
 
-  /* ==================== HERO SVG ANIMATION ==================== */
-
+  /* ==================== HERO FOG ANIMATION ==================== */
+  // Fog is now 100% pure CSS (fog-layer system in home.css).
+  // No JS needed — browser handles all keyframe animations via GPU.
   function initHeroSVGAnimation() {
-    const heroSVG = document.querySelector('.hero__bg-svg');
-    if (!heroSVG) return;
-
-    // Animate the SVG filter turbulence baseFrequency for an organic morphing feel
-    const turbulence = heroSVG.querySelector('feTurbulence');
-    if (!turbulence) return;
-
-    let time = 0;
-    let raf;
-
-    function animateTurbulence() {
-      time += 0.002;
-      const baseFreq = (0.012 + Math.sin(time) * 0.004).toFixed(4);
-      turbulence.setAttribute('baseFrequency', `${baseFreq} ${(parseFloat(baseFreq) * 1.4).toFixed(4)}`);
-      turbulence.setAttribute('seed', Math.floor(time * 10) % 100);
-      raf = requestAnimationFrame(animateTurbulence);
-    }
-
-    animateTurbulence();
-
-    // Pause animation when tab is not visible
-    document.addEventListener('visibilitychange', () => {
-      if (document.hidden) {
-        cancelAnimationFrame(raf);
-      } else {
-        animateTurbulence();
-      }
-    });
+    // intentionally empty — see .fog-layer CSS animation in home.css
   }
 
   /* ==================== CHAPTER CARDS HOVER COLOR ==================== */

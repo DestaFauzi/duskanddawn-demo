@@ -68,57 +68,48 @@
     <!-- ===== HERO ===== -->
     <section class="hero" aria-label="Hero">
       <div class="hero__bg" aria-hidden="true">
-        <!-- Animated SVG background with feTurbulence for organic morphing -->
+        <!-- Pure CSS fog system — no JS animation, fully GPU-composited -->
+        <!-- Layer 1: warm dawn glow top-right, slow drift -->
+        <div class="fog-layer fog-layer--1"></div>
+        <!-- Layer 2: cool chasing blue bottom-left -->
+        <div class="fog-layer fog-layer--2"></div>
+        <!-- Layer 3: gold centre pulse -->
+        <div class="fog-layer fog-layer--3"></div>
+        <!-- Layer 4: deep void, bottom center -->
+        <div class="fog-layer fog-layer--4"></div>
+        <!-- Layer 5: gossamer mid-layer -->
+        <div class="fog-layer fog-layer--5"></div>
+        <!-- Layer 6: ultra-wide ambient base -->
+        <div class="fog-layer fog-layer--6"></div>
+        <!-- Layer 7: micro shimmer -->
+        <div class="fog-layer fog-layer--7"></div>
+        <!-- Layer 8: edge bleed -->
+        <div class="fog-layer fog-layer--8"></div>
+
+        <!-- Static SVG constellation (no animation = no jank) -->
         <svg class="hero__bg-svg" viewBox="0 0 1440 900" preserveAspectRatio="xMidYMid slice" xmlns="http://www.w3.org/2000/svg">
-          <defs>
-            <filter id="hero-turbulence" x="-20%" y="-20%" width="140%" height="140%">
-              <feTurbulence type="fractalNoise" baseFrequency="0.012 0.018" numOctaves="4" seed="8" result="noise"/>
-              <feDisplacementMap in="SourceGraphic" in2="noise" scale="120" xChannelSelector="R" yChannelSelector="G"/>
-            </filter>
-            <radialGradient id="blob-grad-1" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#f5d7b5" stop-opacity="0.18"/>
-              <stop offset="100%" stop-color="#f5d7b5" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="blob-grad-2" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#3a5fc8" stop-opacity="0.14"/>
-              <stop offset="100%" stop-color="#3a5fc8" stop-opacity="0"/>
-            </radialGradient>
-            <radialGradient id="blob-grad-3" cx="50%" cy="50%" r="50%">
-              <stop offset="0%" stop-color="#c9a84c" stop-opacity="0.1"/>
-              <stop offset="100%" stop-color="#c9a84c" stop-opacity="0"/>
-            </radialGradient>
-          </defs>
-
-          <!-- Background blobs -->
-          <ellipse cx="1100" cy="200" rx="500" ry="400" fill="url(#blob-grad-1)" filter="url(#hero-turbulence)"/>
-          <ellipse cx="200" cy="700" rx="450" ry="380" fill="url(#blob-grad-2)" filter="url(#hero-turbulence)"/>
-          <ellipse cx="720" cy="450" rx="300" ry="280" fill="url(#blob-grad-3)"/>
-
-          <!-- Subtle constellation lines -->
-          <g stroke="rgba(240,235,224,0.04)" stroke-width="1" fill="none">
+          <g stroke="rgba(240,235,224,0.035)" stroke-width="1" fill="none">
             <line x1="100" y1="100" x2="400" y2="300"/>
             <line x1="400" y1="300" x2="750" y2="200"/>
             <line x1="750" y1="200" x2="1100" y2="450"/>
             <line x1="300" y1="700" x2="600" y2="550"/>
             <line x1="600" y1="550" x2="900" y2="650"/>
             <line x1="900" y1="650" x2="1300" y2="500"/>
+            <line x1="200" y1="400" x2="450" y2="600"/>
+            <line x1="1050" y1="200" x2="1300" y2="380"/>
           </g>
-          <g fill="rgba(240,235,224,0.06)">
-            <circle cx="400" cy="300" r="2"/>
+          <g fill="rgba(240,235,224,0.07)">
+            <circle cx="400" cy="300" r="1.5"/>
             <circle cx="750" cy="200" r="2"/>
-            <circle cx="1100" cy="450" r="2"/>
-            <circle cx="600" cy="550" r="2"/>
+            <circle cx="1100" cy="450" r="1.5"/>
+            <circle cx="600" cy="550" r="1.5"/>
             <circle cx="900" cy="650" r="2"/>
+            <circle cx="1300" cy="380" r="1"/>
+            <circle cx="450" cy="600" r="1"/>
           </g>
-
-          <!-- Abstract horizon line -->
-          <path d="M0 520 Q360 480 720 510 Q1080 540 1440 500 L1440 900 L0 900 Z" fill="rgba(255,255,255,0.015)"/>
+          <!-- Subtle horizon gradient plane -->
+          <path d="M0 560 Q360 520 720 545 Q1080 570 1440 530 L1440 900 L0 900 Z" fill="rgba(255,255,255,0.012)"/>
         </svg>
-
-        <!-- CSS blobs for extra depth -->
-        <div class="hero-blob hero-blob--1"></div>
-        <div class="hero-blob hero-blob--2"></div>
-        <div class="hero-blob hero-blob--3"></div>
       </div>
 
       <div class="hero__content">

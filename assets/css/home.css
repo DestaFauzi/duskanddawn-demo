@@ -24,12 +24,166 @@
   overflow: hidden;
 }
 
+/* ---- Fog Layer System ----
+   Pure CSS animated radial blobs. Each layer uses:
+   - border-radius morphing for organic shape change
+   - translate drift for slow floating movement
+   - Long durations (25-45s) + staggered delays → never sync
+   - will-change: transform, border-radius → GPU composited, zero jank
+   All opacity kept low so layers blend softly.
+---------------------------------------------------------------- */
+
+@keyframes fog-drift-1 {
+  0%   { transform: translate(0px, 0px) scale(1);    border-radius: 62% 38% 55% 45% / 48% 52% 48% 52%; }
+  25%  { transform: translate(40px, -25px) scale(1.05); border-radius: 55% 45% 40% 60% / 60% 40% 55% 45%; }
+  50%  { transform: translate(15px, 30px) scale(0.97); border-radius: 40% 60% 60% 40% / 45% 55% 42% 58%; }
+  75%  { transform: translate(-30px, 10px) scale(1.03); border-radius: 58% 42% 48% 52% / 52% 48% 60% 40%; }
+  100% { transform: translate(0px, 0px) scale(1);    border-radius: 62% 38% 55% 45% / 48% 52% 48% 52%; }
+}
+@keyframes fog-drift-2 {
+  0%   { transform: translate(0px, 0px) scale(1);    border-radius: 45% 55% 38% 62% / 52% 48% 55% 45%; }
+  30%  { transform: translate(-35px, 20px) scale(1.07); border-radius: 60% 40% 55% 45% / 42% 58% 48% 52%; }
+  60%  { transform: translate(20px, -15px) scale(0.95); border-radius: 38% 62% 48% 52% / 58% 42% 38% 62%; }
+  100% { transform: translate(0px, 0px) scale(1);    border-radius: 45% 55% 38% 62% / 52% 48% 55% 45%; }
+}
+@keyframes fog-drift-3 {
+  0%   { transform: translate(0, 0) scale(1);       border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%; }
+  33%  { transform: translate(25px, 35px) scale(1.04); border-radius: 62% 38% 52% 48% / 48% 52% 60% 40%; }
+  66%  { transform: translate(-20px, -30px) scale(0.96); border-radius: 40% 60% 55% 45% / 60% 40% 45% 55%; }
+  100% { transform: translate(0, 0) scale(1);       border-radius: 50% 50% 45% 55% / 55% 45% 50% 50%; }
+}
+@keyframes fog-drift-4 {
+  0%   { transform: translate(0, 0) scale(1);       border-radius: 55% 45% 62% 38% / 40% 60% 52% 48%; }
+  40%  { transform: translate(-15px, -40px) scale(1.06); border-radius: 42% 58% 48% 52% / 55% 45% 38% 62%; }
+  70%  { transform: translate(30px, 20px) scale(0.98); border-radius: 60% 40% 38% 62% / 48% 52% 58% 42%; }
+  100% { transform: translate(0, 0) scale(1);       border-radius: 55% 45% 62% 38% / 40% 60% 52% 48%; }
+}
+
+/* Shared fog layer base */
+.fog-layer {
+  position: absolute;
+  border-radius: 50%;
+  will-change: transform, border-radius;
+  pointer-events: none;
+}
+
+/* Layer 1: Warm amber/dawn — top right quadrant */
+.fog-layer--1 {
+  width: 75vw;
+  height: 75vw;
+  max-width: 900px;
+  max-height: 900px;
+  top: -20%;
+  right: -15%;
+  background: radial-gradient(ellipse at center, rgba(245,215,181,0.18) 0%, rgba(201,140,60,0.06) 50%, transparent 75%);
+  filter: blur(70px);
+  animation: fog-drift-1 38s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+}
+
+/* Layer 2: Deep blue/chasing — bottom left */
+.fog-layer--2 {
+  width: 80vw;
+  height: 80vw;
+  max-width: 1000px;
+  max-height: 1000px;
+  bottom: -25%;
+  left: -20%;
+  background: radial-gradient(ellipse at center, rgba(58,95,200,0.16) 0%, rgba(30,50,140,0.05) 55%, transparent 78%);
+  filter: blur(90px);
+  animation: fog-drift-2 45s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  animation-delay: -14s;
+}
+
+/* Layer 3: Gold — centre, subtle pulse */
+.fog-layer--3 {
+  width: 55vw;
+  height: 55vw;
+  max-width: 700px;
+  max-height: 700px;
+  top: 20%;
+  left: 25%;
+  background: radial-gradient(ellipse at center, rgba(201,168,76,0.1) 0%, rgba(180,140,50,0.03) 55%, transparent 78%);
+  filter: blur(100px);
+  animation: fog-drift-3 32s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  animation-delay: -8s;
+}
+
+/* Layer 4: Midnight violet — bottom centre */
+.fog-layer--4 {
+  width: 60vw;
+  height: 60vw;
+  max-width: 750px;
+  max-height: 750px;
+  bottom: -10%;
+  left: 30%;
+  background: radial-gradient(ellipse at center, rgba(61,43,110,0.14) 0%, rgba(40,20,80,0.04) 55%, transparent 80%);
+  filter: blur(80px);
+  animation: fog-drift-4 40s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  animation-delay: -22s;
+}
+
+/* Layer 5: Gossamer mid — top left */
+.fog-layer--5 {
+  width: 50vw;
+  height: 50vw;
+  max-width: 650px;
+  max-height: 650px;
+  top: 10%;
+  left: 5%;
+  background: radial-gradient(ellipse at center, rgba(240,230,215,0.06) 0%, transparent 70%);
+  filter: blur(60px);
+  animation: fog-drift-2 28s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  animation-delay: -5s;
+}
+
+/* Layer 6: Ultra-wide ambient base — full width wash */
+.fog-layer--6 {
+  width: 120vw;
+  height: 60vh;
+  top: 20%;
+  left: -10%;
+  background: radial-gradient(ellipse at 50% 50%, rgba(245,215,181,0.04) 0%, rgba(201,168,76,0.02) 40%, transparent 70%);
+  filter: blur(120px);
+  border-radius: 50%;
+  animation: fog-drift-1 55s ease-in-out infinite;
+  animation-delay: -30s;
+}
+
+/* Layer 7: Right-side shimmer — new dawn green tint */
+.fog-layer--7 {
+  width: 45vw;
+  height: 45vw;
+  max-width: 560px;
+  max-height: 560px;
+  bottom: 5%;
+  right: 5%;
+  background: radial-gradient(ellipse at center, rgba(201,232,212,0.08) 0%, transparent 68%);
+  filter: blur(75px);
+  animation: fog-drift-3 36s cubic-bezier(0.45,0.05,0.55,0.95) infinite;
+  animation-delay: -18s;
+}
+
+/* Layer 8: Subtle top bleed to darken edges */
+.fog-layer--8 {
+  width: 100vw;
+  height: 40vh;
+  top: 0;
+  left: 0;
+  background: linear-gradient(to bottom, rgba(8,6,4,0.5) 0%, transparent 100%);
+  border-radius: 0;
+  filter: none;
+  animation: none;
+}
+
 .hero__bg-svg {
   position: absolute;
   inset: 0;
   width: 100%;
   height: 100%;
+  z-index: 2;
+  pointer-events: none;
 }
+
 
 .hero__content {
   position: relative;
@@ -169,6 +323,9 @@
   font-style: italic;
   color: var(--text-muted);
   font-size: 1rem;
+  text-align: center;
+  display: block;
+  width: 100%;
 }
 
 .chapters__track {
@@ -312,6 +469,9 @@
   text-transform: uppercase;
   color: var(--gold);
   margin-bottom: var(--space-sm);
+  display: block;
+  text-align: center;
+  width: 100%;
 }
 
 .featured__title {
